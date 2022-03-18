@@ -1,0 +1,32 @@
+{
+    "name": "smc22",
+    "version": "1.0.0",
+    "description": "Studio website for 2022",
+    "main": "index.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "watch": "webpack --watch",
+        "start": "webpack serve --open",
+        "build": "webpack"
+    },
+    "keywords": [],
+    "author": "Steven M. Caruso Design Studio",
+    "license": "ISC",
+    "devDependencies": {
+        "copy-webpack-plugin": "latest",
+        "css-loader": "latest",
+        "html-webpack-plugin": "latest",
+        "raw-loader": "latest",
+        "style-loader": "latest",
+        "webpack": "latest",
+        "webpack-cli": "latest",
+        "webpack-dev-server": "^4.7.4"
+    },
+    "dependencies": {
+        "@webxr-input-profiles/assets": "^1.0.8",
+        "@webxr-input-profiles/motion-controllers": "^1.0.0",
+        "gsap": "latest",
+        "three": "latest",
+        "three-mesh-ui": "^4.7.3"
+    }
+}
