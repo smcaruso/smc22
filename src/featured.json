@@ -6,7 +6,7 @@
         "description": "Stage design and previsualization for a developer-focused virtual conference keynote stage. The stage was created in Unreal Engine and rendered out for the keynote speakers and their presentations to be composited into.",
         "awards": [
             {
-                "status": "winner",
+                "status": "Winner",
                 "award": "Webby Awards",
                 "category": "Technology: Virtual & Remote",
                 "project": "2021 VOICE Talks Presented by Google Assistant",
@@ -43,10 +43,10 @@
         "title": "Google I/O",
         "subtitle": "Sparks, 2019",
         "category": "Conference + Exhibit",
-        "description": "Google I/O is a yearly developers' conference held by Google at the Shoreline Amphitheater—across the street from the Googleplex—in Mountain View, California. It's a three-day event consisting of a Keynote presentation, sessions, codelabs, and sandboxes. Temporary structures housing all of the event components, along with shade canopies, food tents, downtime activities and shareable monuments, are organized along a central boulevard through the site. Sandboxes are hands-on product and technology demo exhibits, each within either a geodesic dome, tent, or inflatable structure. In 2019, there were eight Sandbox structures, each developed in close partnership between Google product teams and the design team at Sparks.",
+        "description": "At this yearly developers' conference, 'sandboxes' are hands-on product and technology demo exhibits, each within either a geodesic dome, tent, or inflatable structure. In 2019, there were eight Sandbox structures, each developed in close partnership between Google product teams and the design team at Sparks. I led the visual and structral design of Sandboxes specific to Android, Web Technologies, Android Auto, and Experiments.",
         "awards": [
             {
-                "status": "finalist",
+                "status": "Finalist",
                 "award": "BizBash Event Style Awards",
                 "category": "Best of the Decade: Best Conference, More Than 5,000 Attendees",
                 "project": "Google I/O 2019",
@@ -66,7 +66,7 @@
         "title": "Ally Digital Dollar AR",
         "subtitle": "Tool of N.A., 2021",
         "category": "Augmented Reality",
-        "description": "This limited-time AR game turned regular, everyday dollar bills into valuable prizes. Scanning the front of the bill with the camera on an AR-capable device made it morph into a luminescent cube that descended into a prize-awarding piece of digital machinery. Created AR-ready 3D assets and animation clips for use in an 8th Wall-developed web app.",
+        "description": "This limited-time AR game turned regular, everyday dollar bills into valuable prizes. Scanning the front of the bill with the camera on an AR-capable device made it morph into a luminescent cube that descended into a prize-awarding piece of digital machinery. I created AR-ready 3D assets and animation clips for use in an 8th Wall-developed web app.",
         "awards": [],
         "modelpath": "",
         "media": []
@@ -75,7 +75,7 @@
         "title": "PivotMIA",
         "subtitle": "Liberty & Co., 2022",
         "category": "Conference",
-        "description": "This conference, hosted by podcast hosts Kara Swisher and Scott Galloway, featured the hottest names in business, fintech, media, and more. Interviews, panel discussions and presentations took place on stages at the 1 Hotel in Miami Beach, over lunch on the beach and at a theatrical dinner experience at Faena.",
+        "description": "This conference, hosted by podcast hosts Kara Swisher and Scott Galloway, featured the hottest names in business, fintech, media, and more. Interviews, panel discussions and presentations took place on stages at the 1 Hotel in Miami Beach, over lunch on the beach and at a theatrical dinner experience at Faena. ",
         "awards": [],
         "modelpath": "",
         "media": []

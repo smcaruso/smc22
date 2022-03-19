@@ -24,6 +24,22 @@ function PopulateProjetText(project, section) {
     projectDescription.innerText = project.description;
 
     section.append(projectTitle, projectSubtitle, projectDescription);
+
+    if (project.awards !== undefined && project.awards.length > 0) {
+
+        let awardsList = document.createElement("ul");
+        project.awards.forEach(
+            function(each) {
+                let awardListItem = document.createElement("li");
+                awardListItem.innerText = `${each.status}, ${each.award} - ${each.category} for ${each.project} with ${each.credit}`;
+                awardsList.append(awardListItem);
+            }
+        );
+
+        section.append(awardsList);
+
+    }
+
     section.append(projectEntry);
     
 }

@@ -2,17 +2,64 @@
     {
         "title": "Johnnie Walker Whisky Workshop",
         "subtitle": "Giant Spoon, 2021",
-        "description": "",
+        "description": "Johnnie Walker partnered with Brooklyn-based artist Mike Perry to produce a collection of cocktail accessories for the holiday season. To promote and sell them, we built a pop-up store in The Shops at Columbus Circle, complete with custom engraving stations and a sampling bar.",
         "media": []
     },
     {
         "title": "PMI Virtual Experience Series",
         "subtitle": "Liberty & Co., 2020-ongoing",
-        "description": "",
+        "description": "To help PMI reimagine their yearly series of conferences for project management professionals in a virtual setting, we designed a suite of 3D-rendered backdrops for an online event platform. The backgrounds provide a visual metaphor related to the theme of each conference in the series, and have evolved to tell a growing story over the course of the years since it began.",
+        "awards": [
+            {
+                "status": "Winner",
+                "award": "BizBash Event Style Awards",
+                "category": "Best Virtual Conference",
+                "project": "PMI Virtual Experience Series (VES)",
+                "credit": "Project Management Institute"
+            },
+            {
+                "status": "Winner",
+                "award": "BizBash Event Style Awards",
+                "category": "Peoples' Choice: Best Virtual Conference",
+                "project": "PMI Virtual Experience Series (VES)",
+                "credit": "Project Management Institute"
+            },
+            {
+                "status": "Winner",
+                "award": "BizBash Event Style Awards",
+                "category": "Best Virtual Environment",
+                "project": "PMI Virtual Experience Series (VES)",
+                "credit": "Project Management Institute"
+            }
+        ],
+        "media": []
+    },
+    {
+        "title": "Reacher Challenge",
+        "subtitle": "Tool of N.A., 2021",
+        "description": "To celebrate the premiere of Amazon Prime Video's newest series, we built a pop-up obstacle course in three cities and invited the public to recreate Jack Reacher's special-ops feats.",
         "media": []
     },
     {
         "title": "Pizza Hut Pac-Man",
+        "subtitle": "Tool of N.A., 2020",
+        "description": "",
+        "media": []
+    },
+    {
+        "title": "Takeda WFH & ISHT",
+        "subtitle": "ImpactXM, 2020",
+        "description": "",
+        "media": []
+    },
+    {
+        "title": "Maserati Portofino Launch",
+        "subtitle": "Giant Spoon, 2020",
+        "description": "",
+        "media": []
+    },
+    {
+        "title": "IBM THINK",
         "subtitle": "Tool of N.A., 2020",
         "description": "",
         "media": []
@@ -30,26 +77,14 @@
         "media": []
     },
     {
-        "title": "Intel CES",
-        "subtitle": "Tool of N.A., 2018",
-        "description": "",
-        "media": []
-    },
-    {
         "title": "JLG Conexpo",
         "subtitle": "RES Exhibit Services, 2019",
         "description": "",
         "media": []
     },
     {
-        "title": "Takeda SHOWNAME",
-        "subtitle": "ImpactXM, 2020",
-        "description": "",
-        "media": []
-    },
-    {
-        "title": "",
-        "subtitle": "",
+        "title": "Intel CES",
+        "subtitle": "Tool of N.A., 2018",
         "description": "",
         "media": []
     }
