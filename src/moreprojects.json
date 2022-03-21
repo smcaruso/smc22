@@ -8,7 +8,7 @@
     {
         "title": "PMI Virtual Experience Series",
         "subtitle": "Liberty & Co., 2020-ongoing",
-        "description": "To help PMI reimagine their yearly series of conferences for project management professionals in a virtual setting, we designed a suite of 3D-rendered backdrops for an online event platform. The backgrounds provide a visual metaphor related to the theme of each conference in the series, and have evolved to tell a growing story over the course of the years since it began.",
+        "description": "To help PMI reimagine their yearly series of conferences for project management professionals in a virtual setting, we designed a suite of 3D-rendered backdrops for an online event platform. The backgrounds provide a visual metaphor related to the theme of each installment, and have evolved to tell a growing story over the course of the series.",
         "awards": [
             {
                 "status": "Winner",
@@ -41,51 +41,63 @@
         "media": []
     },
     {
-        "title": "Pizza Hut Pac-Man",
-        "subtitle": "Tool of N.A., 2020",
-        "description": "",
+        "title": "Pizza Hut ARcade",
+        "subtitle": "Tool of N.A., 2021",
+        "description": "Cashing in on 90s core memories of pizza parlor arcade machines, Pizza Hut introduced a limited run of boxes enhanced with an augmented reality Pac-Man game to enjoy over a takeout pie. Through an AR-equipped device's camera, the game map rises out of the box and presents the familiar game to play in 3D. Concept art, animation, and game-ready assets were prepared for integration by 8th Wall. High-scoring players were entered to win a custom Pac-Man cabinet.",
+        "awards": [
+            {
+                "status": "Winner",
+                "award": "FWA of the Day",
+                "category": "83 Points, 2 Days",
+                "project": "Pizza Hut WebAR PAC-MAN Box",
+                "credit": "Pizza Hut, GSD&M, Tool"
+            }
+        ],
         "media": []
     },
     {
-        "title": "Takeda WFH & ISHT",
+        "title": "Takeda WHF & ISTH",
         "subtitle": "ImpactXM, 2020",
-        "description": "",
+        "description": "This pair of exhibits, initially for two international heart health conferences in Europe and Asia, were designed around modularity and the need to adapt to variably sized footprints throughout their life cycle. Because of the complex regulatory needs around medical marketing, the exhibits appear as two seperate experiences when approached from opposite sides.",
         "media": []
     },
     {
-        "title": "Maserati Portofino Launch",
+        "title": "Maserati Trofeo Launch",
         "subtitle": "Giant Spoon, 2020",
-        "description": "",
+        "description": "Maserati's ultra-high-end Trofeo collection, a racing-inspired trim of some of their popular models, was slated to make its debut at this offsite experience during the 2020 NY International Auto Show. Due to the Javits Center's conversion into a hospital for the early stages of the COVID-19 pandemic, NYIAS was indefinitely postponed that year and the designs shown here were shelved. Guests were to be led through a multisensory experience highlighting the history, design, sounds and luxurious features of the vehicles.",
         "media": []
     },
     {
-        "title": "IBM THINK",
+        "title": "IBM MWC & THINK",
         "subtitle": "Tool of N.A., 2020",
-        "description": "",
-        "media": []
-    },
-    {
-        "title": "Nerf Ultra",
-        "subtitle": "Invisible North, 2019",
-        "description": "",
+        "description": "IBM's many IT infrastructure, AI and cloud computing technologies have uses in every industry and scenario imaginable. To help them visualize the variety and versatility of these solutions, we created a series of interactive physical-digital installations to tell specific stories of those technologies in use as governments and business respond to natural disasters, move products around the world, or integrate smart devices into our daily lives. Developed for Mobile World Congress and later use at IBM's own THINK conference.",
         "media": []
     },
     {
         "title": "Microsoft Inspire",
         "subtitle": "INVNT, 2019",
-        "description": "",
+        "description": "Microsoft's yearly conference and networking event for their partner buisnesses features a keynote presentation by CEO Satya Nadella along with larger presentations and demos around the main stage. Held in the massive T-Mobile Arena, our focus was on making the presentation content visible to the live and online streaming audiences through the use of massive overhead, underfoot and wrap-around LED video.",
         "media": []
     },
     {
         "title": "JLG Conexpo",
         "subtitle": "RES Exhibit Services, 2019",
-        "description": "",
+        "description": "Conexpo—the construction trade show—is all about enormous machines building enormous projects. Since their products would never fit inside an exhibition hall, equipment-makers JLG and their competitors take to the parking lot where they erect their own pavilions. We designed a set of three structures for consideration and explored their features through video and interactive web-based walkthroughs made with Unreal Engine.",
         "media": []
     },
     {
-        "title": "Intel CES",
+        "title": "Intel Mega",
         "subtitle": "Tool of N.A., 2018",
-        "description": "",
+        "description": "Visitors to Intel's sprawling CES exhibit were treated to experience the company's vision for emerging technologies—autonomous vehicles, 5G, artificial intelligence and virtual reality—through an immersive, mutlimedia adventure. The design was considered as a standalone experience and integrated into the larger exhibit plan by Taylor Group.",
+        "awards": [
+            {
+                "status": "Winner",
+                "award": "FWA of the Day",
+                "category": "82 Points, 3 Days",
+                "project": "Intel Mega Experience - CES 2018",
+                "credit": "Tool, Intel"
+            }
+        ],
         "media": []
     }
 ]
