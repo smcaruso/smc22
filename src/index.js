@@ -28,6 +28,7 @@ function PopulateProjetText(project, section) {
     if (project.awards !== undefined && project.awards.length > 0) {
 
         let awardsList = document.createElement("ul");
+
         project.awards.forEach(
             function(each) {
                 let awardListItem = document.createElement("li");
@@ -37,6 +38,20 @@ function PopulateProjetText(project, section) {
         );
 
         section.append(awardsList);
+
+    }
+
+    if (project.media !== undefined && project.media.length > 0) {
+
+        let mediaList = document.createElement("ul");
+
+        project.media.forEach(
+            function(each) {
+                mediaList.innerHTML += `<li><a href="${each}" target=_blank>${each}</a></li>`;
+            }
+        );
+
+        section.append(mediaList);
 
     }
 

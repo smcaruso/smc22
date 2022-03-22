@@ -3,7 +3,21 @@
         "title": "Johnnie Walker Whisky Workshop",
         "subtitle": "Giant Spoon, 2021",
         "description": "Johnnie Walker partnered with Brooklyn-based artist Mike Perry to produce a collection of cocktail accessories for the holiday season. To promote and sell them, we built a pop-up store in The Shops at Columbus Circle, complete with custom engraving stations and a sampling bar.",
-        "media": []
+        "media": [
+            "./images/projects/gs-jwww/aerial.jpg",
+            "./images/projects/gs-jwww/Front2.jpg",
+            "./images/projects/gs-jwww/Left.jpg",
+            "./images/projects/gs-jwww/personalization-entry-2.jpg",
+            "./images/projects/gs-jwww/bar6.jpg",
+            "./images/projects/gs-jwww/interior4.jpg",
+            "./images/projects/gs-jwww/checkout2.jpg",
+            "./images/projects/gs-jwww/10.jpg",
+            "./images/projects/gs-jwww/24.jpg",
+            "./images/projects/gs-jwww/49.jpg",
+            "./images/projects/gs-jwww/55.jpg",
+            "./images/projects/gs-jwww/76.jpg",
+            "./images/projects/gs-jwww/107.jpg"
+        ]
     },
     {
         "title": "PMI Virtual Experience Series",
@@ -32,58 +46,131 @@
                 "credit": "Project Management Institute"
             }
         ],
-        "media": []
+        "media": [
+            "./images/projects/lco-pmives/june01.jpg",
+            "./images/projects/lco-pmives/june02.jpg",
+            "./images/projects/lco-pmives/june03.jpg",
+            "./images/projects/lco-pmives/aug01.jpg",
+            "./images/projects/lco-pmives/aug02.jpg",
+            "./images/projects/lco-pmives/aug03.jpg",
+            "./images/projects/lco-pmives/oct01.jpg",
+            "./images/projects/lco-pmives/oct02.jpg",
+            "./images/projects/lco-pmives/oct03.jpg",
+            "./images/projects/lco-pmives/dec.jpg",
+            "./images/projects/lco-pmives/q32201.jpg",
+            "./images/projects/lco-pmives/q32202.jpg",
+            "./images/projects/lco-pmives/q32203.jpg",
+            "./images/projects/lco-pmives/q32204.jpg",
+            "./images/projects/lco-pmives/mar2201.jpg",
+            "./images/projects/lco-pmives/mar2202.jpg",
+            "./images/projects/lco-pmives/mar2203.jpg",
+            "./images/projects/lco-pmives/mar2204.jpg"
+        ]
     },
     {
         "title": "Reacher Challenge",
         "subtitle": "Tool of N.A., 2021",
         "description": "To celebrate the premiere of Amazon Prime Video's newest series, we built a pop-up obstacle course in three cities and invited the public to recreate Jack Reacher's special-ops feats.",
-        "media": []
+        "media": [
+            "./images/projects/tna-reacher/aerial.jpg",
+            "./images/projects/tna-reacher/front.jpg",
+            "./images/projects/tna-reacher/Cube1corner.jpg",
+            "./images/projects/tna-reacher/cube2front.jpg",
+            "./images/projects/tna-reacher/logjump.jpg",
+            "./images/projects/tna-reacher/tireflip.jpg",
+            "./images/projects/tna-reacher/ReacherChallengeCaseStudyv6e_Tool_h264.mp4"
+        ]
     },
     {
-        "title": "Pizza Hut ARcade",
+        "title": "Ally Digital Dollar AR",
         "subtitle": "Tool of N.A., 2021",
-        "description": "Cashing in on 90s core memories of pizza parlor arcade machines, Pizza Hut introduced a limited run of boxes enhanced with an augmented reality Pac-Man game to enjoy over a takeout pie. Through an AR-equipped device's camera, the game map rises out of the box and presents the familiar game to play in 3D. Concept art, animation, and game-ready assets were prepared for integration by 8th Wall. High-scoring players were entered to win a custom Pac-Man cabinet.",
-        "awards": [
-            {
-                "status": "Winner",
-                "award": "FWA of the Day",
-                "category": "83 Points, 2 Days",
-                "project": "Pizza Hut WebAR PAC-MAN Box",
-                "credit": "Pizza Hut, GSD&M, Tool"
-            }
-        ],
-        "media": []
+        "description": "This limited-time AR game turned regular, everyday dollar bills into valuable prizes. Scanning the front of the bill with the camera on an AR-capable device made it morph into a luminescent cube that descended into a prize-awarding piece of digital machinery. I created AR-ready 3D assets and animation clips for use in an 8th Wall-developed web app.",
+        "awards": [],
+        "media": [
+            "./images/projects/tna-ally/cubeoptions2.jpg",
+            "./images/projects/tna-ally/scan.gif",
+            "./images/projects/tna-ally/sweep-landscape.m4v"
+        ]
     },
     {
         "title": "Takeda WHF & ISTH",
         "subtitle": "ImpactXM, 2020",
         "description": "This pair of exhibits, initially for two international heart health conferences in Europe and Asia, were designed around modularity and the need to adapt to variably sized footprints throughout their life cycle. Because of the complex regulatory needs around medical marketing, the exhibits appear as two seperate experiences when approached from opposite sides.",
-        "media": []
+        "media": [
+            "./images/projects/ixm-takeda/01frontcorner.jpg",
+            "./images/projects/ixm-takeda/02front.jpg",
+            "./images/projects/ixm-takeda/03backmedical.jpg",
+            "./images/projects/ixm-takeda/04aerialback.jpg",
+            "./images/projects/ixm-takeda/13backmedicalsign.jpg",
+            "./images/projects/ixm-takeda/14aerial.jpg"
+        ]
     },
     {
         "title": "Maserati Trofeo Launch",
         "subtitle": "Giant Spoon, 2020",
         "description": "Maserati's ultra-high-end Trofeo collection, a racing-inspired trim of some of their popular models, was slated to make its debut at this offsite experience during the 2020 NY International Auto Show. Due to the Javits Center's conversion into a hospital for the early stages of the COVID-19 pandemic, NYIAS was indefinitely postponed that year and the designs shown here were shelved. Guests were to be led through a multisensory experience highlighting the history, design, sounds and luxurious features of the vehicles.",
-        "media": []
+        "media": [
+            "./images/projects/gs-maserati/acceltunnel.jpg",
+            "./images/projects/gs-maserati/igniteexploded.jpg",
+            "./images/projects/gs-maserati/igniteinterior.jpg",
+            "./images/projects/gs-maserati/interior.jpg",
+            "./images/projects/gs-maserati/interiorop2.jpg",
+            "./images/projects/gs-maserati/roughplanmon.jpg"
+        ]
     },
     {
         "title": "IBM MWC & THINK",
         "subtitle": "Tool of N.A., 2020",
         "description": "IBM's many IT infrastructure, AI and cloud computing technologies have uses in every industry and scenario imaginable. To help them visualize the variety and versatility of these solutions, we created a series of interactive physical-digital installations to tell specific stories of those technologies in use as governments and business respond to natural disasters, move products around the world, or integrate smart devices into our daily lives. Developed for Mobile World Congress and later use at IBM's own THINK conference.",
-        "media": []
+        "media": [
+            "./images/projects/tna-ibm/front.jpg",
+            "./images/projects/tna-ibm/frontaerial.jpg",
+            "./images/projects/tna-ibm/city.jpg",
+            "./images/projects/tna-ibm/govtpad.jpg",
+            "./images/projects/tna-ibm/insurancepadv2lightson.jpg",
+            "./images/projects/tna-ibm/telcopad.jpg",
+            "./images/projects/tna-ibm/small-response.jpg",
+            "./images/projects/tna-ibm/01frontcorner.jpg",
+            "./images/projects/tna-ibm/03aerial.jpg",
+            "./images/projects/tna-ibm/cam8.jpg",
+            "./images/projects/tna-ibm/cam9.jpg",
+            "./images/projects/tna-ibm/cam10.jpg",
+            "./images/projects/tna-ibm/small-factory.jpg",
+            "./images/projects/tna-ibm/frontcorner.jpg",
+            "./images/projects/tna-ibm/kitchen.jpg"
+        ]
     },
     {
         "title": "Microsoft Inspire",
         "subtitle": "INVNT, 2019",
         "description": "Microsoft's yearly conference and networking event for their partner buisnesses features a keynote presentation by CEO Satya Nadella along with larger presentations and demos around the main stage. Held in the massive T-Mobile Arena, our focus was on making the presentation content visible to the live and online streaming audiences through the use of massive overhead, underfoot and wrap-around LED video.",
-        "media": []
+        "media": [
+            "./images/projects/invnt-msi/1tightchart.jpg",
+            "./images/projects/invnt-msi/2lowsatya.jpg",
+            "./images/projects/invnt-msi/2up.jpg",
+            "./images/projects/invnt-msi/3wide.jpg",
+            "./images/projects/invnt-msi/5earth.jpg"
+        ]
     },
     {
         "title": "JLG Conexpo",
         "subtitle": "RES Exhibit Services, 2019",
         "description": "Conexpo—the construction trade show—is all about enormous machines building enormous projects. Since their products would never fit inside an exhibition hall, equipment-makers JLG and their competitors take to the parking lot where they erect their own pavilions. We designed a set of three structures for consideration and explored their features through video and interactive web-based walkthroughs made with Unreal Engine.",
-        "media": []
+        "media": [
+            "./images/projects/res-jlg/1aerial.jpg",
+            "./images/projects/res-jlg/10electrification.jpg",
+            "./images/projects/res-jlg/14store.jpg",
+            "./images/projects/res-jlg/16cafe.jpg",
+            "./images/projects/res-jlg/17pavilion2nd.jpg",
+            "./images/projects/res-jlg/18pavilion1st.jpg",
+            "./images/projects/res-jlg/cam1aerial.jpg",
+            "./images/projects/res-jlg/cam2frontcorner.jpg",
+            "./images/projects/res-jlg/cam9electrification.jpg",
+            "./images/projects/res-jlg/cam18cafeandbar.jpg",
+            "./images/projects/res-jlg/cam19lowerlevel.jpg",
+            "./images/projects/res-jlg/cam19upperlevel.jpg",
+            "./images/projects/res-jlg/jlgcomp.mp4"
+        ]
     },
     {
         "title": "Intel Mega",
@@ -98,6 +185,12 @@
                 "credit": "Tool, Intel"
             }
         ],
-        "media": []
+        "media": [
+            "./images/projects/tna-intel/cam3.jpg",
+            "./images/projects/tna-intel/cam4.jpg",
+            "./images/projects/tna-intel/cam6.jpg",
+            "./images/projects/tna-intel/Intel-2018-CES-booth-12.jpg",
+            "./images/projects/tna-intel/Intel-2018-CES-booth-23.JPG"
+        ]
     }
 ]
