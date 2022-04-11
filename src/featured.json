@@ -28,7 +28,7 @@
         "title": "PMI Professional Awards Gallery",
         "subtitle": "Liberty & Co., 2021",
         "category": "Interactive 3D App",
-        "description": "",
+        "description": "PMI's Professional Awards recognize notable achievements in the world of project management. Typically presented yearly as a ceremony at one of the Institute's gatherings, a transition to a series of virtual events beginning in 2020 created a need for a new and innovative medium. We created an immersive, interactive 3D gallery experience for the web, honoring award winners with the gravitas of a work of art. Slickly produced highlight videos and narrated audio guides enhance the gallery experience.",
         "awards": [
 
         ],
@@ -47,7 +47,7 @@
         "title": "Google I/O",
         "subtitle": "Sparks, 2019",
         "category": "Conference + Exhibit",
-        "description": "At this yearly developers' conference, 'sandboxes' are hands-on product and technology demo exhibits, each within either a geodesic dome, tent, or inflatable structure. In 2019, there were eight Sandbox structures, each developed in close partnership between Google product teams and the design team at Sparks. I led the visual and structral design of Sandboxes specific to Android, Web Technologies, Android Auto, and Experiments.",
+        "description": "At this yearly developers' conference, 'sandboxes' are hands-on product and technology demo exhibits, each within either a geodesic dome, tent, or inflatable structure. In 2019, there were eight Sandbox structures, each developed in close partnership between Google product teams and the design team at Sparks. I led the visual and structural design of Sandboxes specific to Android, Web Technologies, Android Auto, and Experiments.",
         "awards": [
             {
                 "status": "Finalist",
@@ -108,25 +108,33 @@
         ]
     },
     {
-        "title": "PivotMIA",
-        "subtitle": "Liberty & Co., 2022",
-        "category": "Conference",
-        "description": "This conference, hosted by podcast hosts Kara Swisher and Scott Galloway, featured the hottest names in business, fintech, media, and more. Interviews, panel discussions and presentations took place on stages at the 1 Hotel in Miami Beach, over lunch on the beach and at a theatrical dinner experience at Faena. ",
+        "title": "Chase Review VR",
+        "subtitle": "Helios Interactive + MKG, 2014",
+        "category": "Virtual Reality",
+        "description": "For their 30th year of sponsorship for the US Open Tennis Championship, we created an interactive VR simulator of the computer vision challenge system, Chase Review. Like an umpire at the Open, players consult the Chase Review monitor to make an in-or-out call during a virtual tennis match in Arthur Ashe Stadium. Along with the digital experience made for the Oculus Rift DK2, a series of physical installations were also created to house it on-site at the Billie Jean King Tennis Center, in the Chase Lounge, at JPMorgan Chase's corporate headquarters, and for a day open to the public in Flatiron Plaza.",
         "awards": [],
         "modelpath": "",
         "media": [
-            "./images/projects/lco-pivot/1370611246.jpg",
-            "./images/projects/lco-pivot/1370611372.jpg",
-            "./images/projects/lco-pivot/1370737269.jpg",
-            "./images/projects/lco-pivot/1370740406.jpg",
-            "./images/projects/lco-pivot/1370928497.jpg",
-            "./images/projects/lco-pivot/1370933563.jpg",
-            "./images/projects/lco-pivot/1370946698.jpg",
-            "./images/projects/lco-pivot/RegDesk02.jpg",
-            "./images/projects/lco-pivot/signrotation.mp4",
-            "./images/projects/lco-pivot/techplan.jpg",
-            "./images/projects/lco-pivot/terrace-logo-guess2b.jpg",
-            "./images/projects/lco-pivot/wide2.jpg"
+            "./images/projects/mkg-chase/chaseux.mp4",
+            "./images/projects/mkg-chase/helios-chase.mp4",
+            "./images/projects/mkg-chase/chase-vr-ext.jpg",
+            "./images/projects/mkg-chase/chase-vr-side.jpg",
+            "./images/projects/mkg-chase/vr-cutaway.jpg",
+            "./images/projects/mkg-chase/lounge.jpg",
+            "./images/projects/mkg-chase/lounge-aerial.jpg",
+            "./images/projects/mkg-chase/flatiron-sketch.jpg",
+            "./images/projects/mkg-chase/welcome-ext.jpg",
+            "./images/projects/mkg-chase/welcome-aerial.jpg",
+            "./images/projects/mkg-chase/IMG_1856.JPG",
+            "./images/projects/mkg-chase/IMG_1854.JPG",
+            "./images/projects/mkg-chase/IMG_0047.jpg",
+            "./images/projects/mkg-chase/IMG_0042.jpg",
+            "./images/projects/mkg-chase/IMG_0050.jpg",
+            "./images/projects/mkg-chase/IMG_0054.jpg",
+            "./images/projects/mkg-chase/IMG_1870.JPG",
+            "./images/projects/mkg-chase/flatiron-truck.jpg",
+            "./images/projects/mkg-chase/flatiron-aerial.jpg"
+            
         ]
     }
 ]

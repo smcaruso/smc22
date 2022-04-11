@@ -1,5 +1,25 @@
 [
     {
+        "title": "PivotMIA",
+        "subtitle": "Liberty & Co., 2022",
+        "description": "This conference, hosted by podcast hosts Kara Swisher and Scott Galloway, featured the hottest names in business, fintech, media, and more. Interviews, panel discussions and presentations took place on stages at the 1 Hotel in Miami Beach, over lunch on the beach and at a theatrical dinner experience at Faena.",
+        "awards": [],
+        "media": [
+            "./images/projects/lco-pivot/1370611246.jpg",
+            "./images/projects/lco-pivot/1370611372.jpg",
+            "./images/projects/lco-pivot/1370737269.jpg",
+            "./images/projects/lco-pivot/1370740406.jpg",
+            "./images/projects/lco-pivot/1370928497.jpg",
+            "./images/projects/lco-pivot/1370933563.jpg",
+            "./images/projects/lco-pivot/1370946698.jpg",
+            "./images/projects/lco-pivot/RegDesk02.jpg",
+            "./images/projects/lco-pivot/signrotation.mp4",
+            "./images/projects/lco-pivot/techplan.jpg",
+            "./images/projects/lco-pivot/terrace-logo-guess2b.jpg",
+            "./images/projects/lco-pivot/wide2.jpg"
+        ]
+    },
+    {
         "title": "Johnnie Walker Whisky Workshop",
         "subtitle": "Giant Spoon, 2021",
         "description": "Johnnie Walker partnered with Brooklyn-based artist Mike Perry to produce a collection of cocktail accessories for the holiday season. To promote and sell them, we built a pop-up store in The Shops at Columbus Circle, complete with custom engraving stations and a sampling bar.",
@@ -22,7 +42,7 @@
     {
         "title": "PMI Virtual Experience Series",
         "subtitle": "Liberty & Co., 2020-ongoing",
-        "description": "To help PMI reimagine their yearly series of conferences for project management professionals in a virtual setting, we designed a suite of 3D-rendered backdrops for an online event platform. The backgrounds provide a visual metaphor related to the theme of each installment, and have evolved to tell a growing story over the course of the series.",
+        "description": "To help PMI reimagine their yearly series of conferences for project management professionals in a virtual setting, we designed a suite of 3D-rendered backdrops for an online event platform. The backgrounds provide a visual metaphor related to the theme of each installment and have evolved to tell a growing story over the course of the series.",
         "awards": [
             {
                 "status": "Winner",
@@ -95,7 +115,7 @@
     {
         "title": "Takeda WHF & ISTH",
         "subtitle": "ImpactXM, 2020",
-        "description": "This pair of exhibits, initially for two international heart health conferences in Europe and Asia, were designed around modularity and the need to adapt to variably sized footprints throughout their life cycle. Because of the complex regulatory needs around medical marketing, the exhibits appear as two seperate experiences when approached from opposite sides.",
+        "description": "This pair of exhibits, initially for two international heart health conferences in Europe and Asia, were designed around modularity and the need to adapt to variably sized footprints throughout their life cycle. Because of the complex regulatory needs around medical marketing, the exhibits appear as two separate experiences when approached from opposite sides.",
         "media": [
             "./images/projects/ixm-takeda/01frontcorner.jpg",
             "./images/projects/ixm-takeda/02front.jpg",
@@ -143,7 +163,7 @@
     {
         "title": "Microsoft Inspire",
         "subtitle": "INVNT, 2019",
-        "description": "Microsoft's yearly conference and networking event for their partner buisnesses features a keynote presentation by CEO Satya Nadella along with larger presentations and demos around the main stage. Held in the massive T-Mobile Arena, our focus was on making the presentation content visible to the live and online streaming audiences through the use of massive overhead, underfoot and wrap-around LED video.",
+        "description": "Microsoft's yearly conference and networking event for their partner businesses features a keynote presentation by CEO Satya Nadella along with larger presentations and demos around the main stage. Held in the massive T-Mobile Arena, our focus was on making the presentation content visible to the live and online streaming audiences through the use of massive overhead, underfoot and wrap-around LED video.",
         "media": [
             "./images/projects/invnt-msi/1tightchart.jpg",
             "./images/projects/invnt-msi/2lowsatya.jpg",
@@ -175,7 +195,7 @@
     {
         "title": "Intel Mega",
         "subtitle": "Tool of N.A., 2018",
-        "description": "Visitors to Intel's sprawling CES exhibit were treated to experience the company's vision for emerging technologies—autonomous vehicles, 5G, artificial intelligence and virtual reality—through an immersive, mutlimedia adventure. The design was considered as a standalone experience and integrated into the larger exhibit plan by Taylor Group.",
+        "description": "Visitors to Intel's sprawling CES exhibit were treated to experience the company's vision for emerging technologies—autonomous vehicles, 5G, artificial intelligence and virtual reality—through an immersive, multimedia adventure. The design was considered as a standalone experience and integrated into the larger exhibit plan by Taylor Group.",
         "awards": [
             {
                 "status": "Winner",
