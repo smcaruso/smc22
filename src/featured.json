@@ -15,11 +15,13 @@
         ],
         "modelpath": "",
         "media": [
-            {
-                "type": "video",
-                "path:": "",
-                "caption": ""
-            }
+            "./images/projects/tna-gadd/2.jpg",
+            "./images/projects/tna-gadd/3.jpg",
+            "./images/projects/tna-gadd/4.jpg",
+            "./images/projects/tna-gadd/5.jpg",
+            "./images/projects/tna-gadd/6.jpg",
+            "./images/projects/tna-gadd/concept-final.jpg",
+            "./images/projects/tna-gadd/ue.jpg"
         ]
     },
     {
@@ -32,11 +34,13 @@
         ],
         "modelpath": "",
         "media": [
-            {
-                "type": "video",
-                "path:": "",
-                "caption": ""
-            }
+            "./images/projects/lco-pmiawards/intro.mp4",
+            "./images/projects/lco-pmiawards/clicking.mp4",
+            "./images/projects/lco-pmiawards/exhibitwithvideo.mp4",
+            "./images/projects/lco-pmiawards/nav.mp4",
+            "./images/projects/lco-pmiawards/gallery1.jpg",
+            "./images/projects/lco-pmiawards/gallery2.jpg",
+            "./images/projects/lco-pmiawards/mockups.jpg"
         ]
     },
     {
@@ -53,23 +57,55 @@
                 "credit": "Sparks"
             }
         ],
-        "modelpath": "",
+        "modelpath": "./images/projects/sparks-gio/",
         "media": [
-            {
-                "type": "video",
-                "path:": "",
-                "caption": ""
-            }
+            "./images/projects/sparks-gio/androiddemob.jpg",
+            "./images/projects/sparks-gio/androidscreenseat.jpg",
+            "./images/projects/sparks-gio/androidwearos.jpg",
+            "./images/projects/sparks-gio/autobackcornerv4.jpg",
+            "./images/projects/sparks-gio/autofullcornerv4b.jpg",
+            "./images/projects/sparks-gio/autowalldetailv4.jpg",
+            "./images/projects/sparks-gio/CHROMEdevicelayoutandroid.jpg",
+            "./images/projects/sparks-gio/CHROMEdevicelayoutpersp.jpg",
+            "./images/projects/sparks-gio/kiosknewd.jpg",
+            "./images/projects/sparks-gio/kiosknewev3.jpg",
+            "./images/projects/sparks-gio/kiosknewnewfv5.jpg",
+            "./images/projects/sparks-gio/paymentsdemokiosk2-26.jpg",
+            "./images/projects/sparks-gio/webaerialwithfeedbacktrackers2.jpg",
+            "./images/projects/sparks-gio/webdemokiosk2-26.jpg",
+            "./images/projects/sparks-gio/DSC02489.jpg",
+            "./images/projects/sparks-gio/DSC02492.jpg",
+            "./images/projects/sparks-gio/DSC02750.jpg",
+            "./images/projects/sparks-gio/DSC02862.jpg",
+            "./images/projects/sparks-gio/DSC03124.jpg",
+            "./images/projects/sparks-gio/DSC03723.jpg",
+            "./images/projects/sparks-gio/DSC03792.jpg",
+            "./images/projects/sparks-gio/DSC03796.jpg"
         ]
     },
     {
-        "title": "Ally Digital Dollar AR",
+        "title": "Pizza Hut ARcade",
         "subtitle": "Tool of N.A., 2021",
         "category": "Augmented Reality",
-        "description": "This limited-time AR game turned regular, everyday dollar bills into valuable prizes. Scanning the front of the bill with the camera on an AR-capable device made it morph into a luminescent cube that descended into a prize-awarding piece of digital machinery. I created AR-ready 3D assets and animation clips for use in an 8th Wall-developed web app.",
-        "awards": [],
+        "description": "Cashing in on 90s core memories of pizza parlor arcade machines, Pizza Hut introduced a limited run of boxes enhanced with an augmented reality Pac-Man game to enjoy over a takeout pie. Through an AR-equipped device's camera, the game map rises out of the box and presents the familiar game to play in 3D. Concept art, animation, and game-ready assets were prepared for integration by 8th Wall. High-scoring players were entered to win a custom Pac-Man cabinet.",
+        "awards": [
+            {
+                "status": "Winner",
+                "award": "FWA of the Day",
+                "category": "83 Points, 2 Days",
+                "project": "Pizza Hut WebAR PAC-MAN Box",
+                "credit": "Pizza Hut, GSD&M, Tool"
+            }
+        ],
         "modelpath": "",
-        "media": []
+        "media": [
+            "./images/projects/tna-pacman/pizzahutbox-qr.jpg",
+            "./images/projects/tna-pacman/armazestart.jpg",
+            "./images/projects/tna-pacman/maxeextend2.jpg",
+            "./images/projects/tna-pacman/hero_image-1536x864.jpg",
+            "./images/projects/tna-pacman/gif-fast.mp4",
+            "./images/projects/tna-pacman/animationtest.mp4"
+        ]
     },
     {
         "title": "PivotMIA",
@@ -78,6 +114,19 @@
         "description": "This conference, hosted by podcast hosts Kara Swisher and Scott Galloway, featured the hottest names in business, fintech, media, and more. Interviews, panel discussions and presentations took place on stages at the 1 Hotel in Miami Beach, over lunch on the beach and at a theatrical dinner experience at Faena. ",
         "awards": [],
         "modelpath": "",
-        "media": []
+        "media": [
+            "./images/projects/lco-pivot/1370611246.jpg",
+            "./images/projects/lco-pivot/1370611372.jpg",
+            "./images/projects/lco-pivot/1370737269.jpg",
+            "./images/projects/lco-pivot/1370740406.jpg",
+            "./images/projects/lco-pivot/1370928497.jpg",
+            "./images/projects/lco-pivot/1370933563.jpg",
+            "./images/projects/lco-pivot/1370946698.jpg",
+            "./images/projects/lco-pivot/RegDesk02.jpg",
+            "./images/projects/lco-pivot/signrotation.mp4",
+            "./images/projects/lco-pivot/techplan.jpg",
+            "./images/projects/lco-pivot/terrace-logo-guess2b.jpg",
+            "./images/projects/lco-pivot/wide2.jpg"
+        ]
     }
 ]
