@@ -5,6 +5,8 @@ import Time from "./utils/time.js";
 import Camera from "./camera.js";
 import sources from "./sources.json"
 import Loaders from "./utils/loaders.js";
+import DisplayMeshes from "./displaymeshes.js";
+import Environment from "./environment.js";
 
 let instance = null;
 
@@ -18,7 +20,6 @@ export default class App {
         }
 
         instance = this;
-        window.experience = this;
         
         // Setup
         this.canvas = canvas;
@@ -32,6 +33,12 @@ export default class App {
         // Custom event listeners
         this.sizes.on("resize", () => { this.resize(); });
         this.time.on("tick", () => { this.update(); });
+        this.loaders.on("ready",
+            () => {
+                this.environment = new Environment();
+                this.displayMeshes = new DisplayMeshes();
+            }
+        )
 
     }
 
@@ -40,6 +47,9 @@ export default class App {
     }
 
     update() {
+
+        this.renderer.update();
+        this.camera.update();
 
     }
 

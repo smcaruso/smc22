@@ -13,7 +13,12 @@
                 "credit": "Modev and Tool of NA"
             }
         ],
-        "modelpath": "",
+        "model": "GoogleAssistantStage",
+        "diffMap" : "GoogleAssistantDiffuse",
+        "roughMap": "GoogleAssistantRough",
+        "xCoord": "2",
+        "yCoord": "1",
+        "zCoord": "5",
         "media": [
             "./images/projects/tna-gadd/2.jpg",
             "./images/projects/tna-gadd/3.jpg",
@@ -32,7 +37,10 @@
         "awards": [
 
         ],
-        "modelpath": "",
+        "model": "PMIbeam",
+        "xCoord": "2",
+        "yCoord": "1",
+        "zCoord": "2.5",
         "media": [
             "./images/projects/lco-pmiawards/intro.mp4",
             "./images/projects/lco-pmiawards/clicking.mp4",
@@ -57,7 +65,11 @@
                 "credit": "Sparks"
             }
         ],
-        "modelpath": "./images/projects/sparks-gio/",
+        "model": "GoogleIOKiosk",
+        "diffMap": "GoogleIODiffuse",
+        "xCoord": "2",
+        "yCoord": "1",
+        "zCoord": "0",
         "media": [
             "./images/projects/sparks-gio/androiddemob.jpg",
             "./images/projects/sparks-gio/androidscreenseat.jpg",
@@ -97,7 +109,11 @@
                 "credit": "Pizza Hut, GSD&M, Tool"
             }
         ],
-        "modelpath": "",
+        "model": "PacFriend",
+        "diffMap": "PacmanDiffuse",
+        "xCoord": "2",
+        "yCoord": "1",
+        "zCoord": "-2.5",
         "media": [
             "./images/projects/tna-pacman/pizzahutbox-qr.jpg",
             "./images/projects/tna-pacman/armazestart.jpg",
@@ -113,7 +129,13 @@
         "category": "Virtual Reality",
         "description": "For their 30th year of sponsorship for the US Open Tennis Championship, we created an interactive VR simulator of the computer vision challenge system, Chase Review. Like an umpire at the Open, players consult the Chase Review monitor to make an in-or-out call during a virtual tennis match in Arthur Ashe Stadium. Along with the digital experience made for the Oculus Rift DK2, a series of physical installations were also created to house it on-site at the Billie Jean King Tennis Center, in the Chase Lounge, at JPMorgan Chase's corporate headquarters, and for a day open to the public in Flatiron Plaza.",
         "awards": [],
-        "modelpath": "",
+        "model": "ChennisChair",
+        "diffMap": "ChennisChairDiffuse",
+        "roughMap": "ChennisChairRough",
+        "metalMap": "ChennisChairMetal",
+        "xCoord": "2",
+        "yCoord": "1",
+        "zCoord": "-5",
         "media": [
             "./images/projects/mkg-chase/chaseux.mp4",
             "./images/projects/mkg-chase/helios-chase.mp4",

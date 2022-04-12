@@ -1,7 +1,281 @@
 [
     {
-        "name": "",
-        "type": "",
-        "path": ""
+        "name": "DoubleDecker",
+        "type": "gltf",
+        "path": "./environment/doubledecker.glb"
+    },
+    {
+        "name": "GoogleAssistantStage",
+        "type": "gltf",
+        "path": "./projectmodels/googleassistantstage.glb"
+    },
+    {
+        "name": "PMIbeam",
+        "type": "gltf",
+        "path": "./projectmodels/pmibeam.glb"
+    },
+    {
+        "name": "GoogleIOKiosk",
+        "type": "gltf",
+        "path": "./projectmodels/googleiokiosk.glb"
+    },
+    {
+        "name": "PacFriend",
+        "type": "gltf",
+        "path": "./projectmodels/pacfriend.glb"
+    },
+    {
+        "name": "ChennisChair",
+        "type": "gltf",
+        "path": "./projectmodels/chennischair.glb"
+    },
+    {
+        "name": "Headset",
+        "type": "gltf",
+        "path": "./projectmodels/headset.glb"
+    },
+    {
+        "name": "Laptop",
+        "type": "gltf",
+        "path": "./projectmodels/laptop.glb"
+    },
+    {
+        "name": "Animation",
+        "type": "gltf",
+        "path": "./projectmodels/animation.glb"
+    },
+    {
+        "name": "PCB",
+        "type": "gltf",
+        "path": "./projectmodels/pcb.glb"
+    },
+    {
+        "name": "Mac",
+        "type": "gltf",
+        "path": "./projectmodels/mac.glb"
+    },
+    {
+        "name": "CircleRough",
+        "type": "texture",
+        "path": "./environment/textures/circlerough.jpg"
+    },
+    {
+        "name": "DeckDiffuse",
+        "type": "texture",
+        "path": "./environment/textures/deckdiff.jpg"
+    },
+    {
+        "name": "DeckMetal",
+        "type": "texture",
+        "path": "./environment/textures/deckmetal.jpg"
+    },
+    {
+        "name": "DeckNormal",
+        "type": "texture",
+        "path": "./environment/textures/decknormal.jpg"
+    },
+    {
+        "name": "DeckRough",
+        "type": "texture",
+        "path": "./environment/textures/deckrough.jpg"
+    },
+    {
+        "name": "LowerGalleryDiffuse",
+        "type": "texture",
+        "path": "./environment/textures/lowergallerydiff.jpg"
+    },
+    {
+        "name": "LowerGalleryMetal",
+        "type": "texture",
+        "path": "./environment/textures/lowergallerymetal.jpg"
+    },
+    {
+        "name": "LowerGalleryNormal",
+        "type": "texture",
+        "path": "./environment/textures/lowergallerynormal.jpg"
+    },
+    {
+        "name": "LowerGalleryRough",
+        "type": "texture",
+        "path": "./environment/textures/lowergalleryrough.jpg"
+    },
+    {
+        "name": "PedestalDiffuse",
+        "type": "texture",
+        "path": "./environment/textures/pedestaldiff.jpg"
+    },
+    {
+        "name": "PedestalRough",
+        "type": "texture",
+        "path": "./environment/textures/pedestalrough.jpg"
+    },
+    {
+        "name": "RectangleDiffuse",
+        "type": "texture",
+        "path": "./environment/textures/rectanglediff.jpg"
+    },
+    {
+        "name": "RectangleMetal",
+        "type": "texture",
+        "path": "./environment/textures/rectanglemetal.jpg"
+    },
+    {
+        "name": "RectangleNormal",
+        "type": "texture",
+        "path": "./environment/textures/rectanglenormal.jpg"
+    },
+    {
+        "name": "RectangleRough",
+        "type": "texture",
+        "path": "./environment/textures/rectanglerough.jpg"
+    },
+    {
+        "name": "StairsRough",
+        "type": "texture",
+        "path": "./environment/textures/stairsrough.jpg"
+    },
+    {
+        "name": "UpperGalleryDiffuse",
+        "type": "texture",
+        "path": "./environment/textures/uppergallerydiff.jpg"
+    },
+    {
+        "name": "UpperGalleryMetal",
+        "type": "texture",
+        "path": "./environment/textures/uppergallerymetal.jpg"
+    },
+    {
+        "name": "UpperGalleryNormal",
+        "type": "texture",
+        "path": "./environment/textures/uppergallerynormal.jpg"
+    },
+    {
+        "name": "UpperGalleryRough",
+        "type": "texture",
+        "path": "./environment/textures/uppergalleryrough.jpg"
+    },
+    {
+        "name": "GoogleAssistantDiffuse",
+        "type": "texture",
+        "path": "./textures/googleassistantdiffuse.jpg"
+    },
+    {
+        "name": "GoogleAssistantRough",
+        "type": "texture",
+        "path": "./textures/googleassistantroughness.jpg"
+    },
+    {
+        "name": "GoogleIODiffuse",
+        "type": "texture",
+        "path": "./textures/googleiodiffuse.jpg"
+    },
+    {
+        "name": "PacmanDiffuse",
+        "type": "texture",
+        "path": "./textures/pacmandiff.jpg"
+    },
+    {
+        "name": "ChennisChairDiffuse",
+        "type": "texture",
+        "path": "./textures/chennischairdiff.jpg"
+    },
+    {
+        "name": "ChennisChairRough",
+        "type": "texture",
+        "path": "./textures/chennischairrough.jpg"
+    },
+    {
+        "name": "ChennisChairMetal",
+        "type": "texture",
+        "path": "./textures/chennischairmetal.jpg"
+    },
+    {
+        "name": "HeadsetDiffuse",
+        "type": "texture",
+        "path": "./textures/headsetdiff.jpg"
+    },
+    {
+        "name": "HeadsetRough",
+        "type": "texture",
+        "path": "./textures/headsetrough.jpg"
+    },
+    {
+        "name": "HeadsetNormal",
+        "type": "texture",
+        "path": "./textures/headsetnormal.jpg"
+    },
+    {
+        "name": "LaptopDiffuse",
+        "type": "texture",
+        "path": "./textures/laptopdiff.jpg"
+    },
+    {
+        "name": "LaptopRough",
+        "type": "texture",
+        "path": "./textures/laptoprough.jpg"
+    },
+    {
+        "name": "AnimationDiffuse",
+        "type": "texture",
+        "path": "./textures/animationdiff.jpg"
+    },
+    {
+        "name": "AnimationRough",
+        "type": "texture",
+        "path": "./textures/animationrough.jpg"
+    },
+    {
+        "name": "PCBDiffuse",
+        "type": "texture",
+        "path": "./textures/pcbdiff.jpg"
+    },
+    {
+        "name": "PCBRough",
+        "type": "texture",
+        "path": "./textures/pcbrough.jpg"
+    },
+    {
+        "name": "PCBMetal",
+        "type": "texture",
+        "path": "./textures/pcbmetal.jpg"
+    },
+    {
+        "name": "MacDiffuse",
+        "type": "texture",
+        "path": "./textures/macdiff.jpg"
+    },
+    {
+        "name": "MacRough",
+        "type": "texture",
+        "path": "./textures/macrough.jpg"
+    },
+    {
+        "name": "MacNormal",
+        "type": "texture",
+        "path": "./textures/macnormal.jpg"
+    },
+    {
+        "name": "Blockhead",
+        "type": "texture",
+        "path": "./environment/textures/blockhead.jpg"
+    },
+    {
+        "name": "BlockheadAlpha",
+        "type": "texture",
+        "path": "./environment/textures/blockheadalpha.png"
+    },
+    {
+        "name": "TokyoHDRI",
+        "type": "cubeTexture",
+        "path":
+        [
+            "./environment/cubemap/px.jpg",
+            "./environment/cubemap/nx.jpg",
+            "./environment/cubemap/py.jpg",
+            "./environment/cubemap/ny.jpg",
+            "./environment/cubemap/pz.jpg",
+            "./environment/cubemap/nz.jpg"
+        ]
     }
+
 ]

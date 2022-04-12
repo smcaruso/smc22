@@ -18,6 +18,7 @@ export default class Loaders extends EventEmitter {
         this.setLoaders();
         this.startLoading();
 
+
     }
 
     setLoaders() {
@@ -44,7 +45,7 @@ export default class Loaders extends EventEmitter {
                 case "texture":
                     this.textureLoader.load(
                         source.path,
-                        (file) => { this.sourceLoaded(source, file); }
+                        (file) => { file.flipY = false; this.sourceLoaded(source, file); }
                     );
                     break;
 

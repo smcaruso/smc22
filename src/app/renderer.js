@@ -23,7 +23,7 @@ export default class Renderer {
         this.instance.toneMappingExposure = 1.75;
         this.instance.shadowMap.enabled = true;
         this.instance.shadowMap.type = THREE.PCFSoftShadowMap;
-        this.instance.setClearColor('#211d20');
+        this.instance.setClearColor('#000000');
         this.instance.setSize(this.app.sizes.width, this.app.sizes.height);
         this.instance.setPixelRatio(this.app.sizes.pixelRatio);
 
@@ -37,7 +37,7 @@ export default class Renderer {
     }
 
     update() {
-
+        
         this.instance.render(this.app.scene, this.app.camera.instance);
 
     }

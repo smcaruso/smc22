@@ -1,12 +1,16 @@
+body {
+    overflow: hidden;
+}
+
 .hidden {
     display: none;
 }
 
-#webgl {
+#webglcanvas {
     position: fixed;
     top: 0;
     left: 0;
     outline: none;
-    z-index: 1
+    z-index: 1;
     
 }

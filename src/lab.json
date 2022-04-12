@@ -1,0 +1,75 @@
+[
+    {
+        "title": "Virtual Reality",
+        "subtitle": "",
+        "description": "",
+        "model": "Headset",
+        "diffMap" : "HeadsetDiffuse",
+        "roughMap": "HeadsetRough",
+        "normalMap": "HeadsetNormal",
+        "xCoord": "1",
+        "yCoord": "5.95",
+        "zCoord": "13",
+        "media": [
+            ""
+        ]
+    },
+    {
+        "title": "Interactive 3D",
+        "subtitle": "",
+        "description": "",
+        "model": "Laptop",
+        "diffMap" : "LaptopDiffuse",
+        "roughMap": "LaptopRough",
+        "xCoord": "1",
+        "yCoord": "5.95",
+        "zCoord": "10.5",
+        "media": [
+            ""
+        ]
+    },
+    {
+        "title": "Visualization & Animation",
+        "subtitle": "",
+        "description": "",
+        "model": "Animation",
+        "diffMap" : "AnimationDiffuse",
+        "roughMap": "AnimationRough",
+        "xCoord": "1",
+        "yCoord": "5.95",
+        "zCoord": "8",
+        "media": [
+            ""
+        ]
+    },
+    {
+        "title": "Electronics",
+        "subtitle": "",
+        "description": "",
+        "model": "PCB",
+        "diffMap" : "PCBDiffuse",
+        "roughMap": "PCBRough",
+        "metalMap": "PCBMetal",
+        "xCoord": "1",
+        "yCoord": "5.95",
+        "zCoord": "5.5",
+        "media": [
+            ""
+        ]
+    },
+    {
+        "title": "Vintage Restoration",
+        "subtitle": "",
+        "description": "",
+        "model": "Mac",
+        "diffMap" : "MacDiffuse",
+        "roughMap": "MacRough",
+        "normalMap": "MacNormal",
+        "xCoord": "1",
+        "yCoord": "5.95",
+        "zCoord": "3",
+        "media": [
+            ""
+        ]
+    }
+]
