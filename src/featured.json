@@ -107,6 +107,13 @@
                 "category": "83 Points, 2 Days",
                 "project": "Pizza Hut WebAR PAC-MAN Box",
                 "credit": "Pizza Hut, GSD&M, Tool"
+            },
+            {
+                "status": "Winner",
+                "award": "American Advertising Awards",
+                "category": "Gold, Games & Gold, Innovative Use of Interactive Technology",
+                "project": "Pizza Hut WebAR PAC-MAN Box",
+                "credit": "Tool"
             }
         ],
         "model": "PacFriend",
