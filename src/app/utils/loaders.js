@@ -90,9 +90,15 @@ export default class Loaders extends EventEmitter {
         this.progressbar.style.width = `${this.fill}px`;
 
         if (this.loaded === this.toLoad) {
-            this.trigger("ready");
-            this.splashscreen.style.opacity = 0;
-            setTimeout(() => {this.splashscreen.style.display = "none"}, 1000);
+            setTimeout(
+                () => {
+                    // this.splashscreen.style.opacity = 0;
+                    this.splashscreen.classList.add("ready");
+                    this.trigger("ready");
+                    setTimeout(() => { this.splashscreen.style.display = "none"; }, 2000)
+                    
+                },
+            500);
         }
 
     }

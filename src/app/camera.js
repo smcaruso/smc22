@@ -1,4 +1,5 @@
 import * as THREE from "three";
+import { gsap } from "gsap/all";
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js';
 import App from "./app.js";
 
@@ -22,7 +23,8 @@ export default class Camera {
             500
         );
         
-        this.instance.position.set(58, 1, 42);
+        this.instance.position.set(65, 20, 40);
+
         this.app.scene.add(this.instance);
 
     }
@@ -30,7 +32,8 @@ export default class Camera {
     setOrbitControls() {
 
         this.controls = new OrbitControls(this.instance, this.app.canvas);
-        this.controls.target.set(3, 4, 6);
+        // this.controls.target.set(3, 4, 6);
+        this.controls.target.set(3, 34, 6);
         this.controls.enableDamping = true;
 
     }
@@ -45,6 +48,23 @@ export default class Camera {
     update() {
 
         this.controls.update();
+
+    }
+
+    moveTo(view) {
+
+        switch (view) {
+
+            case "initial":
+                gsap.to(this.instance.position, {y: 2, duration: 3, ease: "back.out(1)"});
+                gsap.to(this.controls.target, {y: 4, duration: 3, ease: "back.out(1)"})
+                break;
+
+            case "UpperGallery":
+                break;
+
+        }
+        console.log(`clicking ${view}`);
 
     }
 

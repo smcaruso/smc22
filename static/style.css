@@ -43,6 +43,11 @@ a {
     transition: opacity 1s;
 }
 
+.splash.ready {
+    opacity: 0;
+    transition: opacity 1s;
+}
+
 .splash .logo {
     grid-column: 1;
     grid-row: 1 / 3;
@@ -102,5 +107,43 @@ a {
     font-size: 12px;
     font-weight: 400;
     font-style: italic;
+    text-align: center;
+}
+
+.mainmenu {
+    z-index: 100;
+    position: absolute;
+    width: 50%;
+    height: 50%;
+    top: 25%;
+    left: 25%;
+    background: rgba(0, 0, 0, 0.25);
+    opacity: 100%;
+    border-radius: 0px;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    font-size: 84px;
+    font-weight: 600;
+    transition: width 0.25s, height 0.25s, border-radius 0.25s, font-size 0.25s, top 0.25s, left 0.25s;
+    cursor: pointer;
+}
+
+.mainmenu.inactive {
+    width: 50px;
+    height: 50px;
+    top: 55%;
+    left: 50%;
+    transform: translate(-25px, -25px);
+    font-size: 0px;
+    opacity: 0%;
+    border-radius: 25px;
+    transition: width 0.25s, height 0.25s, border-radius 0.25s, font-size 0.25s, top 0.25s, left 0.25s, opacity 0.5s;
+}
+
+.mainmenu .label {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     text-align: center;
 }

@@ -248,7 +248,7 @@ export default class Environment {
                             alphaMap: this.app.loaders.items.SwatchAlpha,
                             transparent: true
                         }
-                        importedMesh.scale.set(2, 2, 2);
+                        importedMesh.scale.set(1.75, 1.75, 1.75);
                         shadow = false;
                         break;
 
