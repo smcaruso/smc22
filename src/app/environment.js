@@ -17,7 +17,7 @@ export default class Environment {
         const pointLightA = new THREE.PointLight(0xffffff, 500, 50, 2);
         const pointLightB = new THREE.PointLight(0xffffff, 300, 50, 2);
         const pointLightC = new THREE.PointLight(0xffffff, 50, 15, 2);
-        const pointLightD = new THREE.PointLight(0xffffff, 50, 15, 2);
+        const pointLightD = new THREE.PointLight(0xffffff, 50, 20, 2);
         const pointLightE = new THREE.PointLight(0xffffff, 50, 15, 2);
 
         pointLightA.castShadow = true;
@@ -48,28 +48,28 @@ export default class Environment {
         pointLightE.position.set(-3.5, 14, 0);
 
         const UpperStripLightA = new THREE.RectAreaLight(0xffffff, 5, 16, .15);
-        const UpperStripLightB = new THREE.RectAreaLight(0xffffff, 5, 16, .15);
+        // const UpperStripLightB = new THREE.RectAreaLight(0xffffff, 5, 16, .15);
         const UpperStripLightC = new THREE.RectAreaLight(0xffffff, 2, 1, 3.8);
         const UpperStripLightD = new THREE.RectAreaLight(0xffffff, 2, 1, 3.8);
         UpperStripLightA.position.set(-4.76, 8.65, 8);
-        UpperStripLightB.position.set(-4.76, 4.65, 8);
+        // UpperStripLightB.position.set(-4.76, 4.65, 8);
         UpperStripLightC.position.set(-4.76, 6.75, 15.8);
         UpperStripLightD.position.set(-4.76, 6.75, 0.1);
         UpperStripLightA.lookAt(-4.75, 0, 8);
-        UpperStripLightB.lookAt(-4.75, 10, 8);
+        // UpperStripLightB.lookAt(-4.75, 10, 8);
         UpperStripLightC.lookAt(-4.75, 6.75, 0);
         UpperStripLightD.lookAt(-4.75, 6.75, 15.8);
 
         const LowerStripLightA = new THREE.RectAreaLight(0xffffff, 5, 16, .15);
-        const LowerStripLightB = new THREE.RectAreaLight(0xffffff, 5, 16, .15);
+        // const LowerStripLightB = new THREE.RectAreaLight(0xffffff, 5, 16, .15);
         const LowerStripLightC = new THREE.RectAreaLight(0xffffff, 2, 1, 3.8);
         const LowerStripLightD = new THREE.RectAreaLight(0xffffff, 2, 1, 3.8);
         LowerStripLightA.position.set(-3.76, 3.7, 0);
-        LowerStripLightB.position.set(-3.76, -0.1, 0);
+        // LowerStripLightB.position.set(-3.76, -0.1, 0);
         LowerStripLightC.position.set(-3.76, 1.8, 7.9);
         LowerStripLightD.position.set(-3.76, 1.8, -7.9);
         LowerStripLightA.lookAt(-3.75, 0, 0);
-        LowerStripLightB.lookAt(-3.75, 1, 0);
+        // LowerStripLightB.lookAt(-3.75, 1, 0);
         LowerStripLightC.lookAt(-3.75, 1.8, 0);
         LowerStripLightD.lookAt(-3.75, 1.8, 0);
 
@@ -80,13 +80,13 @@ export default class Environment {
             pointLightD,
             pointLightE,
             UpperStripLightA,
-            UpperStripLightB,
+            // UpperStripLightB,
             UpperStripLightC,
-            // UpperStripLightD,
+            UpperStripLightD,
             LowerStripLightA,
-            LowerStripLightB,
+            // LowerStripLightB,
             LowerStripLightC,
-            // LowerStripLightD,
+            LowerStripLightD,
         );
 
     }
@@ -113,6 +113,7 @@ export default class Environment {
                             metalness: 1,
                             // roughness: 0.25
                         };
+                        this.app.loaders.items.LowerGalleryNormal.encoding = THREE.LinearEncoding;
                         shadow = true;
                         break;
                     
@@ -125,6 +126,7 @@ export default class Environment {
                             metalness: 1,
                             // roughness: 0.25
                         };
+                        this.app.loaders.items.UpperGalleryNormal.encoding = THREE.LinearEncoding;
                         shadow = true;
                         break;
                     
@@ -142,20 +144,17 @@ export default class Environment {
                         shadow = true;
                         break;
                     
-                    case "GlassWall":
-                        parameters = {}
-                        shadow = false;
-                        break;
-                    
                     case "Deck":
                         parameters = {
                             map: this.app.loaders.items.DeckDiffuse,
                             metalnessMap: this.app.loaders.items.DeckMetal,
                             normalMap: this.app.loaders.items.DeckNormal,
+                            // normalScale: new THREE.Vector2(0.25, 0.25),
                             roughnessMap: this.app.loaders.items.DeckRough,
                             metalness: 1,
                             // roughness: 0.25
                         };
+                        this.app.loaders.items.DeckNormal.encoding = THREE.LinearEncoding;
                         shadow = true;
                         break;
                     
@@ -168,6 +167,7 @@ export default class Environment {
                             metalness: 1,
                             // roughness: 0.25
                         };
+                        this.app.loaders.items.RectangleNormal.encoding = THREE.LinearEncoding;
                         shadow = false;
                         break;
                     
@@ -200,11 +200,6 @@ export default class Environment {
                             roughness: 0.5
                         }
                         shadow = true;
-                        break;
-                    
-                    case "UpperRailing":
-                        parameters = {}
-                        shadow = false;
                         break;
 
                     case "TextFeatured":
@@ -241,6 +236,19 @@ export default class Environment {
                             alphaMap: this.app.loaders.items.BlockheadAlpha,
                             transparent: true
                         }
+                        shadow = false;
+                        break;
+
+                    case "Swatches":
+                        parameters = {
+                            map: this.app.loaders.items.Swatch,
+                            emissiveMap: this.app.loaders.items.Swatch,
+                            emissive: 0xffffff,
+                            emissiveIntensity: 0.25,
+                            alphaMap: this.app.loaders.items.SwatchAlpha,
+                            transparent: true
+                        }
+                        importedMesh.scale.set(2, 2, 2);
                         shadow = false;
                         break;
 

@@ -41,7 +41,7 @@ export default class DisplayMeshes {
                     projectModel.rotateY(Math.PI * 0.5);
 
                     projectModel.position.set(project.xCoord, project.yCoord, project.zCoord);
-                    projectModel.scale.set(2, 2, 2);
+
 
                 }
 

@@ -270,6 +270,16 @@
         "path": "./environment/textures/blockheadalpha.png"
     },
     {
+        "name": "Swatch",
+        "type": "texture",
+        "path": "./environment/textures/swatch.jpg"
+    },
+    {
+        "name": "SwatchAlpha",
+        "type": "texture",
+        "path": "./environment/textures/swatchalpha.png"
+    },
+    {
         "name": "TokyoHDRI",
         "type": "cubeTexture",
         "path":

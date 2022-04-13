@@ -47,6 +47,7 @@ export default class App {
     resize() {
 
         this.renderer.resize();
+        this.camera.resize();
 
     }
 
