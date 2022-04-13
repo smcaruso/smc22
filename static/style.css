@@ -1,5 +1,17 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+}
+
 body {
     overflow: hidden;
+    background: #000000;
+    color: #ffffff;
+}
+
+a {
+    color: #ffffff;
 }
 
 .hidden {
@@ -13,4 +25,82 @@ body {
     outline: none;
     z-index: 1;
     
+}
+
+.splash {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-300px, -150px);
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 0px;
+    width: 600px;
+    height: 300px;
+    z-index: 100;
+    opacity: 1;
+    transition: opacity 1s;
+}
+
+.splash .logo {
+    grid-column: 1;
+    grid-row: 1 / 3;
+    background-image: url(./images/smclogo.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+.splash .headline {
+    grid-column: 2 / 4;
+    grid-row: 1;
+}
+
+.splash h1 {
+    font-size: 32px;
+    font-weight: 600;
+}
+
+.splash .subhead {
+    grid-column: 2 / 4;
+    grid-row: 2;
+}
+
+.splash h2 {
+    font-weight: 200;
+    font-size: 18px;
+    line-height: 22px;
+    transform: translate(0, -10px);
+}
+
+.splash .progress {
+    grid-column: 1 / 4;
+    grid-row: 4;
+    font-weight: 600;
+    font-size: 10px;
+    text-align: center;
+}
+
+.splash .progress .bar {
+    background: #ffffff;
+    border-style: solid;
+    border-width: 2px;
+    border-right-width: 300px;
+    border-color: #000000;
+    outline-style: solid;
+    outline-width: 1px;
+    width: 0px;
+    height: 4px;
+    left: 100px;
+    margin: 0 auto 10px auto;
+    transition: width 0.25, border-right-width 0.25s;
+}
+
+.splash .helptext {
+    grid-column: 1 / 4;
+    grid-row: 5;
+    font-size: 12px;
+    font-weight: 400;
+    font-style: italic;
+    text-align: center;
 }

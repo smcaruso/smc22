@@ -57,7 +57,7 @@
     {
         "name": "CircleRough",
         "type": "texture",
-        "path": "./environment/textures/circlerough.jpg"
+        "path": "./environment/textures/circlerough.png"
     },
     {
         "name": "DeckDiffuse",
@@ -67,17 +67,17 @@
     {
         "name": "DeckMetal",
         "type": "texture",
-        "path": "./environment/textures/deckmetal.jpg"
+        "path": "./environment/textures/deckmetal.png"
     },
     {
         "name": "DeckNormal",
         "type": "texture",
-        "path": "./environment/textures/decknormal.jpg"
+        "path": "./environment/textures/decknormal.png"
     },
     {
         "name": "DeckRough",
         "type": "texture",
-        "path": "./environment/textures/deckrough.jpg"
+        "path": "./environment/textures/deckrough.png"
     },
     {
         "name": "LowerGalleryDiffuse",
@@ -87,52 +87,57 @@
     {
         "name": "LowerGalleryMetal",
         "type": "texture",
-        "path": "./environment/textures/lowergallerymetal.jpg"
+        "path": "./environment/textures/lowergallerymetal.png"
     },
     {
         "name": "LowerGalleryNormal",
         "type": "texture",
-        "path": "./environment/textures/lowergallerynormal.jpg"
+        "path": "./environment/textures/lowergallerynormal.png"
     },
     {
         "name": "LowerGalleryRough",
         "type": "texture",
-        "path": "./environment/textures/lowergalleryrough.jpg"
+        "path": "./environment/textures/lowergalleryrough.png"
     },
     {
         "name": "PedestalDiffuse",
         "type": "texture",
-        "path": "./environment/textures/pedestaldiff.jpg"
+        "path": "./environment/textures/pedestaldiff.png"
     },
     {
         "name": "PedestalRough",
         "type": "texture",
-        "path": "./environment/textures/pedestalrough.jpg"
+        "path": "./environment/textures/pedestalrough.png"
     },
     {
         "name": "RectangleDiffuse",
         "type": "texture",
-        "path": "./environment/textures/rectanglediff.jpg"
+        "path": "./environment/textures/rectanglediff.png"
     },
     {
         "name": "RectangleMetal",
         "type": "texture",
-        "path": "./environment/textures/rectanglemetal.jpg"
+        "path": "./environment/textures/rectanglemetal.png"
     },
     {
         "name": "RectangleNormal",
         "type": "texture",
-        "path": "./environment/textures/rectanglenormal.jpg"
+        "path": "./environment/textures/rectanglenormal.png"
     },
     {
         "name": "RectangleRough",
         "type": "texture",
-        "path": "./environment/textures/rectanglerough.jpg"
+        "path": "./environment/textures/rectanglerough.png"
+    },
+    {
+        "name": "RibbedNormal",
+        "type": "texture",
+        "path": "./environment/textures/ribbednormal.jpg"
     },
     {
         "name": "StairsRough",
         "type": "texture",
-        "path": "./environment/textures/stairsrough.jpg"
+        "path": "./environment/textures/stairsrough.png"
     },
     {
         "name": "UpperGalleryDiffuse",
@@ -142,17 +147,17 @@
     {
         "name": "UpperGalleryMetal",
         "type": "texture",
-        "path": "./environment/textures/uppergallerymetal.jpg"
+        "path": "./environment/textures/uppergallerymetal.png"
     },
     {
         "name": "UpperGalleryNormal",
         "type": "texture",
-        "path": "./environment/textures/uppergallerynormal.jpg"
+        "path": "./environment/textures/uppergallerynormal.png"
     },
     {
         "name": "UpperGalleryRough",
         "type": "texture",
-        "path": "./environment/textures/uppergalleryrough.jpg"
+        "path": "./environment/textures/uppergalleryrough.png"
     },
     {
         "name": "GoogleAssistantDiffuse",

@@ -1,5 +1,5 @@
 import * as THREE from "three";
-import Renderer from "./renderer.js";
+import Renderer from "./utils/renderer.js";
 import Sizes from "./utils/sizes.js";
 import Time from "./utils/time.js";
 import Camera from "./camera.js";
@@ -7,6 +7,7 @@ import sources from "./sources.json"
 import Loaders from "./utils/loaders.js";
 import DisplayMeshes from "./displaymeshes.js";
 import Environment from "./environment.js";
+import Navigation from "./navigation.js";
 
 let instance = null;
 
@@ -29,6 +30,7 @@ export default class App {
         this.loaders = new Loaders(sources);
         this.camera = new Camera();
         this.renderer = new Renderer();
+        this.nav = new Navigation();
 
         // Custom event listeners
         this.sizes.on("resize", () => { this.resize(); });
@@ -43,6 +45,8 @@ export default class App {
     }
 
     resize() {
+
+        this.renderer.resize();
 
     }
 

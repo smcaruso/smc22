@@ -1,5 +1,4 @@
 import * as THREE from "three";
-import RectAreaLightUniformsLib from "three/examples/jsm/lights/RectAreaLightUniformsLib.js"
 import App from "./app.js";
 
 export default class Environment {
@@ -9,29 +8,44 @@ export default class Environment {
         this.app = new App();
         this.addLights();
         this.processStructure();
+        this.app.renderer.instance.shadowMap.needsUpdate = true;
 
     }
 
     addLights() {
 
-        const pointLightA = new THREE.PointLight(0xffffff, 200, 20, 2);
-        const pointLightB = new THREE.PointLight(0xffffff, 200, 20, 2);
-        const pointLightC = new THREE.PointLight(0xffffff, 200, 20, 2);
+        const pointLightA = new THREE.PointLight(0xffffff, 500, 50, 2);
+        const pointLightB = new THREE.PointLight(0xffffff, 300, 50, 2);
+        const pointLightC = new THREE.PointLight(0xffffff, 50, 15, 2);
+        const pointLightD = new THREE.PointLight(0xffffff, 50, 15, 2);
+        const pointLightE = new THREE.PointLight(0xffffff, 50, 15, 2);
+
         pointLightA.castShadow = true;
         pointLightB.castShadow = true;
-        pointLightB.castShadow = true;
-        pointLightA.shadow.mapSize.width = 1024;
-        pointLightA.shadow.mapSize.height = 1024;
-        pointLightB.shadow.mapSize.width = 1024;
-        pointLightB.shadow.mapSize.height = 1024;
-        pointLightC.shadow.mapSize.width = 1024;
-        pointLightC.shadow.mapSize.height = 1024;
+        pointLightC.castShadow = true;
+        pointLightD.castShadow = true;
+        pointLightE.castShadow = true;
+        pointLightA.shadow.mapSize.width = 512;
+        pointLightA.shadow.mapSize.height = 512;
+        pointLightB.shadow.mapSize.width = 512;
+        pointLightB.shadow.mapSize.height = 512;
+        pointLightC.shadow.mapSize.width = 512;
+        pointLightC.shadow.mapSize.height = 512;
+        pointLightD.shadow.mapSize.width = 512;
+        pointLightD.shadow.mapSize.height = 512;
+        pointLightE.shadow.mapSize.width = 512;
+        pointLightE.shadow.mapSize.height = 512;
         pointLightA.shadow.radius = 5;
         pointLightB.shadow.radius = 5;
         pointLightC.shadow.radius = 5;
-        pointLightA.position.set(10, 12, -7);
-        pointLightB.position.set(-18, 12, 18);
-        pointLightC.position.set(15, 30, 20);
+        pointLightD.shadow.radius = 5;
+        pointLightE.shadow.radius = 5;
+
+        pointLightA.position.set(15, 30, -15);
+        pointLightB.position.set(-18, 7, 18);
+        pointLightC.position.set(6, 5, 3);
+        pointLightD.position.set(5, 10, 14);
+        pointLightE.position.set(-3.5, 14, 0);
 
         const UpperStripLightA = new THREE.RectAreaLight(0xffffff, 5, 16, .15);
         const UpperStripLightB = new THREE.RectAreaLight(0xffffff, 5, 16, .15);
@@ -63,14 +77,16 @@ export default class Environment {
             pointLightA,
             pointLightB,
             pointLightC,
+            pointLightD,
+            pointLightE,
             UpperStripLightA,
             UpperStripLightB,
             UpperStripLightC,
-            UpperStripLightD,
+            // UpperStripLightD,
             LowerStripLightA,
             LowerStripLightB,
             LowerStripLightC,
-            LowerStripLightD,
+            // LowerStripLightD,
         );
 
     }
@@ -79,6 +95,9 @@ export default class Environment {
 
         let doubleDecker = new THREE.Object3D();
         let parameters;
+        let shadow = true;
+
+        const whiteMaterial = new THREE.MeshBasicMaterial({color: 0xffffff});
 
         this.app.loaders.items.DoubleDecker.scene.children.forEach(
             (importedMesh) => {
@@ -92,9 +111,9 @@ export default class Environment {
                             normalMap: this.app.loaders.items.LowerGalleryNormal,
                             roughnessMap: this.app.loaders.items.LowerGalleryRough,
                             metalness: 1,
-                            reflectivity: 1,
-                            roughness: 0.25
+                            // roughness: 0.25
                         };
+                        shadow = true;
                         break;
                     
                     case "UpperGallery":
@@ -104,31 +123,28 @@ export default class Environment {
                             normalMap: this.app.loaders.items.UpperGalleryNormal,
                             roughnessMap: this.app.loaders.items.UpperGalleryRough,
                             metalness: 1,
-                            reflectivity: 1,
-                            roughness: 0.25
+                            // roughness: 0.25
                         };
+                        shadow = true;
                         break;
                     
                     case "Stairs":
                         parameters = {
                             color: 0x00CEFF,
+                            map: this.app.loaders.items.StairsRough,
+                            bumpMap: this.app.loaders.items.StairsRough,
+                            bumpScale: 0.1,
                             roughnessMap: this.app.loaders.items.StairsRough,
+                            roughness: 0.5,
                             transparent: true,
-                            transmission: 1.0,
-                            clearcoat: 1.0
+                            opacity: 0.85
                         }
+                        shadow = true;
                         break;
                     
                     case "GlassWall":
-                        parameters = {
-                            color: 0xffffff,
-                            transparent: true,
-                            transmission: 1.0,
-                            thickness: 1,
-                            roughness: 0.6,
-                            opacity: 0.75,
-                            clearcoat: 1
-                        }
+                        parameters = {}
+                        shadow = false;
                         break;
                     
                     case "Deck":
@@ -138,9 +154,9 @@ export default class Environment {
                             normalMap: this.app.loaders.items.DeckNormal,
                             roughnessMap: this.app.loaders.items.DeckRough,
                             metalness: 1,
-                            reflectivity: 1,
-                            roughness: 0.25
-                        }
+                            // roughness: 0.25
+                        };
+                        shadow = true;
                         break;
                     
                     case "OpenRectangle":
@@ -150,19 +166,24 @@ export default class Environment {
                             normalMap: this.app.loaders.items.RectangleNormal,
                             roughnessMap: this.app.loaders.items.RectangleRough,
                             metalness: 1,
-                            reflectivity: 1,
-                            roughness: 0.25
-                        }
+                            // roughness: 0.25
+                        };
+                        shadow = false;
                         break;
                     
                     case "FloatingCircle":
                         parameters = {
-                            color: 0x00CEFF,
+                            // color: 0x00CEFF,
+                            color: 0x008bac,
+                            map: this.app.loaders.items.CircleRough,
+                            bumpMap: this.app.loaders.items.CircleRough,
+                            bumpScale: 0.25,
                             roughnessMap: this.app.loaders.items.CircleRough,
+                            roughness: 0.5,
                             transparent: true,
-                            transmission: 1.0,
-                            opacity: 0.75,
+                            opacity: 0.5
                         }
+                        shadow = false;
                         break;
                     
                     case "FloorPlane":
@@ -170,6 +191,7 @@ export default class Environment {
                             color: 0x000550,
                             roughness: 0.85
                         }
+                        shadow = false;
                         break;
 
                     case "GalleryPedestals":
@@ -177,59 +199,49 @@ export default class Environment {
                             map: this.app.loaders.items.PedestalDiffuse,
                             roughness: 0.5
                         }
+                        shadow = true;
                         break;
                     
                     case "UpperRailing":
-                        parameters = {
-                            color: 0xffffff,
-                            transparent: true,
-                            transmission: 1.0,
-                            roughness: 0.5,
-                            opacity: 0.75
-                        }
+                        parameters = {}
+                        shadow = false;
                         break;
 
                     case "TextFeatured":
-                        parameters = {
-                            color: 0xffffff,
-                            emissive: 0xffffff
-                        }
+                        parameters = {};
+                        shadow = false;
                         break;
 
                     case "TextMoreProjects":
-                        parameters = {
-                            color: 0xffffff,
-                            emissive: 0xffffff
-                        }
+                        parameters = {};
+                        shadow = false;
                         break;
                     
                     case "TextLab":
-                        parameters = {
-                            color: 0xffffff,
-                            emissive: 0xffffff
-                        }
+                        parameters = {};
+                        shadow = false;
                         break;
                     
                     case "TextInfo":
-                        parameters = {
-                            color: 0xffffff,
-                            emissive: 0xffffff
-                        }
+                        parameters = {};
+                        shadow = false;
                         break;
                     
                     case "TextStudio":
-                        parameters = {
-                            color: 0xffffff,
-                            emissive: 0xffffff
-                        }
+                        parameters = {};
+                        shadow = false;
                         break;
                     
                     case "Photo":
                         parameters = {
                             map: this.app.loaders.items.Blockhead,
+                            emissiveMap: this.app.loaders.items.Blockhead,
+                            emissive: 0xffffff,
+                            emissiveIntensity: 0.5,
                             alphaMap: this.app.loaders.items.BlockheadAlpha,
                             transparent: true
                         }
+                        shadow = false;
                         break;
 
                     default:
@@ -237,18 +249,24 @@ export default class Environment {
                         break;
                 }
                 parameters.envMap = this.app.loaders.items.TokyoHDRI;
-                parameters.envMapIntensity = 0.1;
+                parameters.envMapIntensity = 0.25;
                 
-                importedMesh.castShadow = true;
-                importedMesh.receiveShadow = true;
+                importedMesh.castShadow = shadow;
+                importedMesh.receiveShadow = shadow;
 
-                importedMesh.material = new THREE.MeshPhysicalMaterial(parameters);
+                if (!parameters.color && !parameters.map) {
+                    importedMesh.material = whiteMaterial;
+
+                } else {
+                    importedMesh.material = new THREE.MeshStandardMaterial(parameters);
+                }
+
 
                 doubleDecker.add(importedMesh.clone());
             }
         );
 
-        this.app.scene.add(doubleDecker)
+        this.app.scene.add(doubleDecker);
 
     }
 

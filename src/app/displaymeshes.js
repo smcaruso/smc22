@@ -15,7 +15,7 @@ export default class DisplayMeshes {
 
         this.models.forEach((each) => {
             this.app.scene.add(each);
-        })
+        });
 
     }
 
@@ -29,17 +29,19 @@ export default class DisplayMeshes {
                 if (project.model !== undefined) {
                     projectModel = this.app.loaders.items[project.model].scene.children[0];
 
+                    projectModel.material = new THREE.MeshPhongMaterial();
                     projectModel.material.envMap = this.app.loaders.items.TokyoHDRI;
-                    projectModel.material.envMapIntensity = 0.75;
+                    projectModel.material.envMapIntensity = 0.25;
+                    projectModel.material.reflectivity = 0.15;
                     projectModel.material.side = THREE.DoubleSide;
 
                     projectModel.castShadow = true;
-                    projectModel.receiveShadow = true;
+                    // projectModel.receiveShadow = true;
 
                     projectModel.rotateY(Math.PI * 0.5);
 
                     projectModel.position.set(project.xCoord, project.yCoord, project.zCoord);
-                    // projectModel.scale.set(2, 2, 2);
+                    projectModel.scale.set(2, 2, 2);
 
                 }
 
@@ -47,16 +49,18 @@ export default class DisplayMeshes {
                     projectModel.material.map = this.app.loaders.items[project.diffMap];
                 }
 
-                if (project.roughMap) {
-                    projectModel.material.roughnessMap = this.app.loaders.items[project.roughMap];
-                }
+                // if (project.roughMap) {
+                //     projectModel.material.roughnessMap = this.app.loaders.items[project.roughMap];
+                // }
 
-                if (project.metalMap) {
-                    projectModel.material.metalnessMap = this.app.loaders.items[project.metalMap];
-                }
+                // if (project.metalMap) {
+                //     projectModel.material.metalnessMap = this.app.loaders.items[project.metalMap];
+                // }
 
                 if (project.normalMap) {
+                    this.app.loaders.items[project.normalMap].encoding = THREE.LinearEncoding;
                     projectModel.material.normalMap = this.app.loaders.items[project.normalMap];
+                    projectModel.material.normalScale = new THREE.Vector2(0.5, 0.5);
                 }
 
                 // color correction
@@ -64,7 +68,9 @@ export default class DisplayMeshes {
                     projectModel.material.color = new THREE.Color(0x4F17A8);
                 }
 
-                if (projectModel !== undefined) { this.models.push(projectModel); }
+                if (projectModel !== undefined) {
+                    this.models.push(projectModel);
+                }
 
             }
         )

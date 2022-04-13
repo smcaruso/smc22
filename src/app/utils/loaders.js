@@ -9,11 +9,17 @@ export default class Loaders extends EventEmitter {
         super();
         this.sources = sources;
 
+        // Loading splash
+        this.progressbar = document.querySelector(".progress .bar");
+        this.splashscreen = document.querySelector(".splash");
+
         // Setup
 
         this.items = {};
         this.toLoad = this.sources.length;
         this.loaded = 0;
+        this.fill = 0;
+        this.border = 300;
 
         this.setLoaders();
         this.startLoading();
@@ -45,14 +51,21 @@ export default class Loaders extends EventEmitter {
                 case "texture":
                     this.textureLoader.load(
                         source.path,
-                        (file) => { file.flipY = false; this.sourceLoaded(source, file); }
+                        (file) => {
+                            file.flipY = false;
+                            file.encoding = THREE.sRGBEncoding;
+                            this.sourceLoaded(source, file);
+                        }
                     );
                     break;
 
                 case "cubeTexture":
                     this.cubeTextureLoader.load(
                         source.path,
-                        (file) => { this.sourceLoaded(source, file); }
+                        (file) => {
+                            file.encoding = THREE.sRGBEncoding;
+                            this.sourceLoaded(source, file);
+                        }
                         );
                     break;
 
@@ -71,8 +84,15 @@ export default class Loaders extends EventEmitter {
         this.items[source.name] = file;
         this.loaded++;
 
+        this.fill = (this.loaded / this.toLoad) * 300;
+        this.border = 302 - this.fill;
+        this.progressbar.style.borderRightWidth = `${this.border}px`;
+        this.progressbar.style.width = `${this.fill}px`;
+
         if (this.loaded === this.toLoad) {
             this.trigger("ready");
+            this.splashscreen.style.opacity = 0;
+            setTimeout(() => {this.splashscreen.style.display = "none"}, 1000);
         }
 
     }
