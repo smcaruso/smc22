@@ -51,6 +51,12 @@ export default class Navigation {
 
             case "#mainmenu":
 
+                if (this.intersections[0].object.name === "GalleryPedestals" ||
+                    this.intersections[0].object.name === "OpenRectangle" ||
+                    this.intersections[0].object.name === "Stairs") {
+                    return;
+                }
+
                 Object.keys(this.mainMenu).forEach(
                     (key) => {
                         if (key === this.intersections[0].object.name) {
