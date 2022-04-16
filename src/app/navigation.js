@@ -36,8 +36,12 @@ export default class Navigation {
         this.raycaster.intersectObjects(this.app.scene.children, true, this.intersections);
 
         if (this.intersections.length === 0) {
+            this.app.canvas.style.cursor = "default";
             Object.keys(this.mainMenu).forEach(
-                (key) => { this.mainMenu[key].classList.add("inactive"); }
+                (key) => {
+                    this.mainMenu[key].classList.add("inactive");
+                    this.app.canvas.style.cursor = "default";
+                }
             );
         } else if (this.intersections.length > 0) {
             this.processIntersections();
@@ -47,20 +51,29 @@ export default class Navigation {
 
     processIntersections() {
 
+        let intersectedName = "";
+        let selection = false;
+
+        if (this.intersections.length > 0) {
+            if (this.intersections[0].object.name === "GalleryPedestals" ||
+                this.intersections[0].object.name === "OpenRectangle" ||
+                this.intersections[0].object.name === "Stairs") {
+                    intersectedName = this.intersections[1].object.name;
+                } else {
+                    intersectedName = this.intersections[0].object.name;
+                }
+        }
+
         switch (window.location.hash) {
 
             case "#mainmenu":
 
-                if (this.intersections[0].object.name === "GalleryPedestals" ||
-                    this.intersections[0].object.name === "OpenRectangle" ||
-                    this.intersections[0].object.name === "Stairs") {
-                    return;
-                }
-
                 Object.keys(this.mainMenu).forEach(
                     (key) => {
-                        if (key === this.intersections[0].object.name) {
+                        if (key === intersectedName) {
                             this.mainMenu[key].classList.remove("inactive");
+                            this.app.canvas.style.cursor = "pointer";
+                            selection = true;
                         } else {
                             this.mainMenu[key].classList.add("inactive");
                         }
@@ -85,11 +98,18 @@ export default class Navigation {
 
         }
 
+        if (!selection) { this.app.canvas.style.cursor = "default"; }
+
     }
 
     onPointerUp(upEvent) {
 
-        this.app.camera.moveTo(this.intersections[0].object.name);
+        let location = "initial";
+        if (this.intersections.length > 0) {
+            location = this.intersections[0].object.name;
+        }
+
+        this.app.camera.moveTo(location);
 
     }
 

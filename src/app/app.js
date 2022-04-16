@@ -39,8 +39,6 @@ export default class App {
             () => {
                 this.environment = new Environment();
                 this.displayMeshes = new DisplayMeshes();
-                window.location = "#mainmenu";
-                this.camera.moveTo("initial");
             }
         )
 

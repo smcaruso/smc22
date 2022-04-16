@@ -119,25 +119,23 @@ a {
     left: 25%;
     background: rgba(0, 0, 0, 0.25);
     opacity: 100%;
-    border-radius: 0px;
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
     font-size: 84px;
     font-weight: 600;
-    transition: width 0.25s, height 0.25s, border-radius 0.25s, font-size 0.25s, top 0.25s, left 0.25s;
+    transition: width 0.25s, height 0.25s, font-size 0.25s, top 0.25s, left 0.25s;
     cursor: pointer;
 }
 
 .mainmenu.inactive {
-    width: 50px;
-    height: 50px;
+    width: 10px;
+    height: 10px;
     top: 55%;
     left: 50%;
-    transform: translate(-25px, -25px);
+    transform: translate(-5px, -5px);
     font-size: 0px;
     opacity: 0%;
-    border-radius: 25px;
-    transition: width 0.25s, height 0.25s, border-radius 0.25s, font-size 0.25s, top 0.25s, left 0.25s, opacity 0.5s;
+    transition: width 0.25s, height 0.25s, font-size 0.25s, top 0.25s, left 0.25s, opacity 0.5s;
 }
 
 .mainmenu .label {

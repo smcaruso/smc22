@@ -53,18 +53,34 @@ export default class Camera {
 
     moveTo(view) {
 
+        console.log(window.location.hash)
         switch (view) {
 
             case "initial":
-                gsap.to(this.instance.position, {y: 2, duration: 3, ease: "back.out(1)"});
-                gsap.to(this.controls.target, {y: 4, duration: 3, ease: "back.out(1)"})
+
+                gsap.to(this.instance.position, {x: 65, y: 2, z: 40, duration: 3, ease: "back.out(1)"});
+                gsap.to(this.controls.target, {x: 3, y: 4, z: 6, duration: 3, ease: "back.out(1)"});
+                window.location = "#mainmenu";
                 break;
 
             case "UpperGallery":
+                gsap.to(this.instance.position, {x: 30, y: 6.5, z: 8, duration: 0.5});
+                gsap.to(this.controls.target, {x: -1, y: 6.5, z: 8, duration: 0.5});
+                window.location = "#lab";
                 break;
 
+            case "LowerGallery":
+                gsap.to(this.instance.position, {x: 32, y: 2, z: 0, duration: 0.5});
+                gsap.to(this.controls.target, {x: 0, y: 2, z: 0, duration: 0.5});
+                window.location = "#work";
+                break;
+
+            case "Deck":
+                gsap.to(this.instance.position, {x: 0.3, y: 1.35, z: 42, duration: 0.5});
+                gsap.to(this.controls.target, {x: 0.3, y: 0.2, z: 0, duration: 0.5});
+                window.location = "#about";
+                break;
         }
-        console.log(`clicking ${view}`);
 
     }
 
