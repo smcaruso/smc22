@@ -12,6 +12,70 @@ export default class Camera {
         this.setInstance();
         this.setOrbitControls();
 
+        this.views = {
+
+            initial: {
+                x: 65,
+                y: 2,
+                z: 40,
+                tX: 3,
+                tY: 4,
+                tZ: 6,
+                duration: 3,
+                ease: "back.out(1)",
+                hash: "#mainmenu"
+            },
+
+            main: {
+                x: 65,
+                y: 2,
+                z: 40,
+                tX: 3,
+                tY: 4,
+                tZ: 6,
+                duration: 1,
+                ease: "power3.inOut",
+                hash: "#mainmenu"
+            },
+
+            UpperGallery: {
+                x: 30,
+                y: 6.5,
+                z: 8,
+                tX: -1,
+                tY: 6.5,
+                tZ: 8,
+                duration: 1,
+                ease: "power3.inOut",
+                hash: "#lab"
+            },
+
+            LowerGallery: {
+                x: 32,
+                y: 1,
+                z: 0,
+                tX: 0,
+                tY: 1,
+                tZ: 0,
+                duration: 1,
+                ease: "power3.inOut",
+                hash: "#work"
+            },
+
+            Deck: {
+                x: 0.3,
+                y: 1.35,
+                z: 42,
+                tX: 0.3,
+                tY: 0.2,
+                tZ: 0,
+                duration: 1,
+                ease: "power3.inOut",
+                hash: "#about"
+            }
+            
+        }; // views lib
+
     }
 
     setInstance() {
@@ -54,90 +118,26 @@ export default class Camera {
 
     moveTo(view) {
 
+        window.location = this.views[view].hash;
+
         gsap.killTweensOf(this.instance.position);
         gsap.killTweensOf(this.controls.target);
 
-        const views = {
-
-            initial: {
-                x: 65,
-                y: 2,
-                z: 40,
-                tX: 3,
-                tY: 4,
-                tZ: 6,
-                duration: 3,
-                ease: "back.out(1)",
-                hash: "#mainmenu"
-            },
-
-            main: {
-                x: 65,
-                y: 2,
-                z: 40,
-                tX: 3,
-                tY: 4,
-                tZ: 6,
-                duration: 1,
-                ease: "power3.inOut",
-                hash: "#mainmenu"
-            },
-
-            UpperGallery: {
-                x: 30,
-                y: 6.5,
-                z: 8,
-                tX: -1,
-                tY: 6.5,
-                tZ: 8,
-                duration: 1,
-                ease: "power3.inOut",
-                hash: "#lab"
-            },
-
-            LowerGallery: {
-                x: 32,
-                y: 2,
-                z: 0,
-                tX: 0,
-                tY: 2,
-                tZ: 0,
-                duration: 1,
-                ease: "power3.inOut",
-                hash: "#work"
-            },
-
-            Deck: {
-                x: 0.3,
-                y: 1.35,
-                z: 42,
-                tX: 0.3,
-                tY: 0.2,
-                tZ: 0,
-                duration: 1,
-                ease: "power3.inOut",
-                hash: "#about"
-            }
-
-        };
-
         gsap.to(this.instance.position, {
-            x: views[view].x,
-            y: views[view].y,
-            z: views[view].z,
-            duration: views[view].duration,
-            ease: views[view].ease
+            x: this.views[view].x,
+            y: this.views[view].y,
+            z: this.views[view].z,
+            duration: this.views[view].duration,
+            ease: this.views[view].ease
         });
 
         gsap.to(this.controls.target, {
-            x: views[view].tX,
-            y: views[view].tY,
-            z: views[view].tZ,
-            duration: views[view].duration,
-            ease: views[view].ease
+            x: this.views[view].tX,
+            y: this.views[view].tY,
+            z: this.views[view].tZ,
+            duration: this.views[view].duration,
+            ease: this.views[view].ease
         });
-
-        window.location = views[view].hash;
 
     }
 

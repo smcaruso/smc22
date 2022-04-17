@@ -51,14 +51,6 @@ export default class DisplayMeshes {
                     projectModel.material.map = this.app.loaders.items[project.diffMap];
                 }
 
-                // if (project.roughMap) {
-                //     projectModel.material.roughnessMap = this.app.loaders.items[project.roughMap];
-                // }
-
-                // if (project.metalMap) {
-                //     projectModel.material.metalnessMap = this.app.loaders.items[project.metalMap];
-                // }
-
                 if (project.normalMap) {
                     this.app.loaders.items[project.normalMap].encoding = THREE.LinearEncoding;
                     projectModel.material.normalMap = this.app.loaders.items[project.normalMap];
@@ -70,6 +62,9 @@ export default class DisplayMeshes {
                     projectModel.material.color = new THREE.Color(0x4F17A8);
                 }
 
+                // caps correction
+                if (projectModel.name === "headset") { projectModel.name = "Headset"; }
+
                 if (projectModel !== undefined) {
                     this.models.push(projectModel);
                 }
@@ -77,9 +72,6 @@ export default class DisplayMeshes {
             }
         )
         
-
-        console.log(this.models)
-
     }
 
 
