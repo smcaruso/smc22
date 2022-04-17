@@ -269,7 +269,6 @@ export default class Environment {
                     importedMesh.material = new THREE.MeshStandardMaterial(parameters);
                 }
 
-                console.log(importedMesh)
                 doubleDecker.add(importedMesh.clone());
             }
         );

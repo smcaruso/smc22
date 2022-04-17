@@ -7,6 +7,9 @@ export default class DisplayMeshes {
 
     constructor() {
 
+        this.featuredProjects = featuredProjects;
+        this.labProjects = labProjects;
+        
         this.app = new App();
         this.models = [];
 
@@ -42,7 +45,6 @@ export default class DisplayMeshes {
 
                     projectModel.position.set(project.xCoord, project.yCoord, project.zCoord);
 
-
                 }
 
                 if (project.diffMap) {
@@ -75,6 +77,8 @@ export default class DisplayMeshes {
             }
         )
         
+
+        console.log(this.models)
 
     }
 

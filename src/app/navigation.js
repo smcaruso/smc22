@@ -43,7 +43,7 @@ export default class Navigation {
                     this.app.canvas.style.cursor = "default";
                 }
             );
-        } else if (this.intersections.length > 0) {
+        } else if (this.intersections.length > 0 && this.intersections[0].object) {
             this.processIntersections();
         }
 
@@ -57,7 +57,8 @@ export default class Navigation {
         if (this.intersections.length > 0) {
             if (this.intersections[0].object.name === "GalleryPedestals" ||
                 this.intersections[0].object.name === "OpenRectangle" ||
-                this.intersections[0].object.name === "Stairs") {
+                this.intersections[0].object.name === "Stairs" &&
+                this.intersections.length > 1) {
                     intersectedName = this.intersections[1].object.name;
                 } else {
                     intersectedName = this.intersections[0].object.name;
@@ -83,6 +84,7 @@ export default class Navigation {
                 break;
                 
             case "#about":
+
                 break;
 
             case "#lab":
@@ -104,12 +106,18 @@ export default class Navigation {
 
     onPointerUp(upEvent) {
 
-        let location = "initial";
-        if (this.intersections.length > 0) {
-            location = this.intersections[0].object.name;
-        }
+        let location = "main";
+        if (this.intersections.length > 0) { location = this.intersections[0].object.name; }
 
         this.app.camera.moveTo(location);
+
+        Object.keys(this.mainMenu).forEach(
+            (key) => { this.mainMenu[key].classList.add("inactive"); }
+        );
+
+    }
+
+    showNavTag() {
 
     }
 
