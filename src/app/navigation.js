@@ -1,4 +1,5 @@
 import * as THREE from "three";
+import { gsap } from "gsap/all";
 import App from "./app.js";
 import featuredProjects from "../featured.json";
 import labProjects from "../lab.json";
@@ -32,26 +33,43 @@ export default class Navigation {
 
             switch (window.location.hash) {
 
+                case "#initial":
+                    break;
+
                 case "#mainmenu":
                     this.app.camera.moveTo("main")
                     let back = document.querySelectorAll(".backbutton");
-                    console.log(back)
                     back.forEach( (each) => { each.remove(); } );
+                    this.clearWindows();
                     break;
 
                 case "#lab":
                     this.app.camera.moveTo("UpperGallery");
+                    this.clearWindows();
                     this.createBackButton();
                     break;
                 
                 case "#work":
                     this.app.camera.moveTo("LowerGallery");
+                    this.clearWindows();
                     this.createBackButton();
                     break;
 
                 case "#about":
                     this.app.camera.moveTo("Deck");
+                    this.clearWindows();
                     this.createBackButton();
+                    break;
+
+                case "#vr": // don't bother with the rest...
+                    this.app.camera.moveTo("Headset");
+                    labProjects.forEach( (project) => {
+                        if (project.model === "Headset") {
+                            this.createProjectWindow(project);
+                            this.labMenu.forEach( (navTag) => {navTag.classList.add("inactive"); } );
+                        }
+                    });
+                    this.projectMenu.forEach( (navTag) => {navTag.classList.add("inactive"); } );
                     break;
 
             }
@@ -78,7 +96,7 @@ export default class Navigation {
                     this.app.canvas.style.cursor = "default";
                 }
             );
-        } else if (this.intersections.length > 0 && this.intersections[0].object) {
+        } else if (this.intersections.length > 0) {
             this.processIntersections(moveEvent);
         }
 
@@ -90,10 +108,7 @@ export default class Navigation {
         let selection = false;
 
         if (this.intersections.length > 0) {
-            if (this.intersections[0].object.name === "GalleryPedestals" ||
-                this.intersections[0].object.name === "OpenRectangle" ||
-                this.intersections[0].object.name === "Stairs" &&
-                this.intersections.length > 1) {
+            if (this.intersections[0].object.name === "GalleryPedestals") {
                     intersectedName = this.intersections[1].object.name;
                 } else {
                     intersectedName = this.intersections[0].object.name;
@@ -101,6 +116,9 @@ export default class Navigation {
         }
 
         switch (window.location.hash) {
+
+            case "#initial":
+                // continue to main menu case
 
             case "#mainmenu":
 
@@ -149,7 +167,7 @@ export default class Navigation {
                 break;
 
             default:
-                console.log(window.location.hash)
+                // console.log(window.location.hash)
 
         }
 
@@ -160,9 +178,12 @@ export default class Navigation {
     onPointerUp(upEvent) {
 
         let location = "main";
-        if (this.intersections.length > 0) { location = this.intersections[0].object.name; }
+        if (this.intersections.length > 0) { location = this.intersections[0].object.name; } else return;
 
         switch (window.location.hash) {
+
+            case "#initial":
+                // continue to main menu case
 
             case "#mainmenu":
                 if (location === "UpperGallery" || location === "LowerGallery" || location === "Deck") {
@@ -178,7 +199,8 @@ export default class Navigation {
                 }
                 featuredProjects.forEach( (project) => {
                     if (project.model === location) {
-                        this.createProjectWindow(project)
+                        this.createProjectWindow(project);
+                        this.projectMenu.forEach( (navTag) => {navTag.classList.add("inactive"); } );
                     }
                 });
                 break;
@@ -186,7 +208,8 @@ export default class Navigation {
             case "#lab":
                 labProjects.forEach( (project) => {
                     if (project.model === location) {
-                        this.createProjectWindow(project)
+                        this.createProjectWindow(project);
+                        this.labMenu.forEach( (navTag) => {navTag.classList.add("inactive"); } );
                     }
                 });
                 break;
@@ -196,10 +219,6 @@ export default class Navigation {
 
         }
 
-        // if (window.location.hash === "#mainmenu")
-        // this.app.camera.moveTo(location);
-        // this.createBackButton();
-
         Object.keys(this.mainMenu).forEach(
             (key) => { this.mainMenu[key].classList.add("inactive"); }
         );
@@ -208,9 +227,12 @@ export default class Navigation {
 
     createBackButton() {
 
+        let backCleanup = document.querySelectorAll(".backbutton");
+        backCleanup.forEach( (each) => { each.remove(); } );
+
         let backButton = document.createElement("div");
         backButton.classList.add("backbutton");
-        backButton.innerText = "Back";
+        backButton.innerHTML = `<span class="arrow"><</span> Back to Full View`;
         document.body.append(backButton);
 
         backButton.addEventListener("pointerup", (event) => {
@@ -256,6 +278,7 @@ export default class Navigation {
         let projectTitle = document.createElement("div");
         let projectSubtitle = document.createElement("div");
         let projectDescription = document.createElement("div");
+        let projectAwards = document.createElement("div");
         let projectMedia = document.createElement("div");
         let closeButton = document.createElement("div");
         let prevNext = document.createElement("div");
@@ -263,19 +286,21 @@ export default class Navigation {
         let nextButton = document.createElement("span");
         
         moreProjectsWindow.classList.add("moreprojects");
+        moreProjectsWindow.classList.add("inactive");
         moreProjectsHeadline.classList.add("headline");
         projectInfoSidebar.classList.add("sidebar");
         projectTitle.classList.add("title");
         projectSubtitle.classList.add("sub");
         projectDescription.classList.add("description");
+        projectAwards.classList.add("awards");
         projectMedia.classList.add("media");
         closeButton.classList.add("closebutton");
         prevNext.classList.add("prevnext");
         previousButton.classList.add("previousbutton");
         nextButton.classList.add("nextbutton");
         closeButton.innerText = "Close";
-        previousButton.innerText = "Previous ";
-        nextButton.innerText = " Next";
+        previousButton.innerHTML = `<span class="arrow"><</span> Previous Project `;
+        nextButton.innerHTML = ` Next Project <span class="arrow">></span>`;
         moreProjectsHeadline.innerText = "More Projects";
 
         nextProject(0);
@@ -291,9 +316,14 @@ export default class Navigation {
         );
         
         document.body.append(moreProjectsWindow);
+        setTimeout(() => { moreProjectsWindow.classList.remove("inactive"); }, 1);
+        
         moreProjectsWindow.addEventListener("pointermove", (event) => { event.stopPropagation(); })
 
-        closeButton.addEventListener("pointerup", () => { moreProjectsWindow.remove(); })
+        closeButton.addEventListener("pointerup", () => {
+            moreProjectsWindow.classList.add("inactive");
+            setTimeout(() => { moreProjectsWindow.remove(); }, 500); 
+        })
         nextButton.addEventListener("pointerup", () => { nextProject(1); })
         previousButton.addEventListener("pointerup", () => { nextProject(-1); })
 
@@ -305,11 +335,40 @@ export default class Navigation {
             } else if (projectIndex < 0) {
                 projectIndex = moreProjects.length - 1;
             }
-            console.log(projectIndex)
 
             projectTitle.innerText = moreProjects[projectIndex].title;
             projectSubtitle.innerText = moreProjects[projectIndex].subtitle;
             projectDescription.innerText = moreProjects[projectIndex].description;
+
+            projectAwards.innerHTML = "";
+
+            if (moreProjects[projectIndex].awards && moreProjects[projectIndex].awards.length > 0) {
+                moreProjects[projectIndex].awards.forEach( (award) => {
+    
+                    let awardItem = document.createElement("ul");
+                    let awardTitle = document.createElement("li");
+                    let awardCategory = document.createElement("li");
+                    let awardProject = document.createElement("li");
+                    let awardCredit = document.createElement("li");
+    
+                    awardTitle.classList.add("title");
+                    awardCategory.classList.add("category");
+                    awardProject.classList.add("project");
+                    awardCredit.classList.add("credit");
+    
+                    awardTitle.innerText = `${award.status}, ${award.award}`;
+                    awardCategory.innerHTML = award.category;
+                    awardProject.innerHTML = award.project;
+                    awardCredit.innerHTML = award.credit;
+    
+                    awardItem.append(awardTitle, awardCategory, awardProject, awardCredit);
+                    projectAwards.append(awardItem);
+    
+                } );
+    
+                projectInfoSidebar.append(projectAwards);
+    
+            }
 
             projectMedia.innerHTML = "";
     
@@ -323,7 +382,129 @@ export default class Navigation {
     }
 
     createProjectWindow(project) {
-        console.log(project)
+
+        let backCleanup = document.querySelectorAll(".backbutton");
+        backCleanup.forEach( (each) => { each.remove(); } );
+
+        let modelRef;
+        this.app.scene.children.forEach( (each) => { if (each.name === project.model) modelRef = each; } );
+
+        this.app.camera.moveTo(project.model);
+        gsap.to(modelRef.rotation, {y: Math.PI * project.rotationMultiplier, duration: 2.0, ease: "power2.inOut" });
+
+        let projectInfoWindow = document.createElement("div");
+        let projectInfoInnerContainer = document.createElement("div");
+        let projectTitle = document.createElement("div");
+        let projectSub = document.createElement("div");
+        let projectCategory = document.createElement("div");
+        let projectDescription = document.createElement("div");
+        let projectAwards = document.createElement("div");
+        let projectMedia = document.createElement("div");
+        let projectNav = document.createElement("div");
+        let backButton = document.createElement("span");
+        let nextButton = document.createElement("span");
+
+        projectInfoWindow.classList.add("projectinfo");
+        projectInfoWindow.classList.add("inactive");
+        projectInfoInnerContainer.classList.add("innercontainer");
+        projectTitle.classList.add("title");
+        projectSub.classList.add("subtitle");
+        projectCategory.classList.add("category");
+        projectDescription.classList.add("description");
+        projectAwards.classList.add("awards");
+        projectMedia.classList.add("media");
+        projectNav.classList.add("projectnav");
+
+        projectTitle.innerText = project.title;
+        projectSub.innerText = project.subtitle;
+        projectCategory.innerText = project.category;
+        projectDescription.innerText = project.description;
+        backButton.innerHTML = `<span class="arrow"><</span> Back to Gallery View `;
+        nextButton.innerHTML = ` Next Project <span class="arrow">></span>`;
+
+        projectInfoInnerContainer.append(projectTitle, projectSub, projectCategory, projectDescription);
+        
+        if (project.awards && project.awards.length > 0) {
+            project.awards.forEach( (award) => {
+
+                let awardItem = document.createElement("ul");
+                let awardTitle = document.createElement("li");
+                let awardCategory = document.createElement("li");
+                let awardProject = document.createElement("li");
+                let awardCredit = document.createElement("li");
+
+                awardTitle.classList.add("title");
+                awardCategory.classList.add("category");
+                awardProject.classList.add("project");
+                awardCredit.classList.add("credit");
+
+                awardTitle.innerText = `${award.status}, ${award.award}`;
+                awardCategory.innerHTML = award.category;
+                awardProject.innerHTML = award.project;
+                awardCredit.innerHTML = award.credit;
+
+                awardItem.append(awardTitle, awardCategory, awardProject, awardCredit);
+                projectAwards.append(awardItem);
+
+            } );
+
+            projectInfoInnerContainer.append(projectAwards);
+
+        }
+
+        project.media.forEach( (mediaItem) => {
+            let image = new Image();
+            image.src = mediaItem;
+            projectMedia.append(image);
+        });
+
+        projectInfoInnerContainer.append(projectMedia);
+        projectNav.append(backButton, nextButton);
+
+        projectInfoWindow.append(projectInfoInnerContainer);
+
+        document.body.append(projectInfoWindow);
+        setTimeout( () => {
+            projectInfoWindow.classList.remove("inactive");
+            document.body.append(projectNav);
+        }, 1000);
+
+        backButton.addEventListener("pointerup",
+            (event) => {
+                gsap.to(modelRef.rotation, {y: Math.PI * 0.5, duration: 2.0, ease: "power2.inOut" });
+                history.back();
+                projectNav.remove();
+            }
+        )
+        
+    }
+
+    clearWindows() {
+
+        let moreProjectsCleanup = document.querySelectorAll(".moreprojects");
+        let featuresCleanup = document.querySelectorAll(".projectinfo");
+        let navCleanup = document.querySelectorAll(".projectnav");
+
+        moreProjectsCleanup.forEach(
+            (each) => {
+                each.classList.add("inactive");
+                setTimeout(() => { each.remove(); }, 500); 
+             }
+        );
+
+        featuresCleanup.forEach(
+            (each) => {
+                each.classList.add("inactive");
+                setTimeout(() => { each.remove(); }, 500); 
+             }
+        );
+
+        navCleanup.forEach(
+            (each) => {
+                each.remove();
+             }
+        );
+
     }
 
 }

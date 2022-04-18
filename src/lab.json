@@ -10,6 +10,7 @@
         "xCoord": "1",
         "yCoord": "5.95",
         "zCoord": "13",
+        "rotationMultiplier": "1.15",
         "media": [
             ""
         ]
@@ -24,6 +25,7 @@
         "xCoord": "1",
         "yCoord": "5.95",
         "zCoord": "10.5",
+        "rotationMultiplier": "0.15",
         "media": [
             ""
         ]
@@ -38,12 +40,13 @@
         "xCoord": "1",
         "yCoord": "5.95",
         "zCoord": "8",
+        "rotationMultiplier": "0.35",
         "media": [
             ""
         ]
     },
     {
-        "title": "Electronics",
+        "title": "Prototyping",
         "subtitle": "",
         "description": "",
         "model": "PCB",
@@ -53,12 +56,13 @@
         "xCoord": "1",
         "yCoord": "5.95",
         "zCoord": "5.5",
+        "rotationMultiplier": "0.35",
         "media": [
             ""
         ]
     },
     {
-        "title": "Vintage Restoration",
+        "title": "Vintage Electronics",
         "subtitle": "",
         "description": "",
         "model": "Mac",
@@ -68,6 +72,7 @@
         "xCoord": "1",
         "yCoord": "5.95",
         "zCoord": "3",
+        "rotationMultiplier": "0.75",
         "media": [
             ""
         ]

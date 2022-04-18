@@ -19,6 +19,7 @@
         "xCoord": "2",
         "yCoord": "1",
         "zCoord": "5",
+        "rotationMultiplier": "0.15",
         "media": [
             "./images/projects/tna-gadd/2.jpg",
             "./images/projects/tna-gadd/3.jpg",
@@ -41,6 +42,7 @@
         "xCoord": "2",
         "yCoord": "1",
         "zCoord": "2.5",
+        "rotationMultiplier": "0.15",
         "media": [
             "./images/projects/lco-pmiawards/intro.mp4",
             "./images/projects/lco-pmiawards/clicking.mp4",
@@ -70,6 +72,7 @@
         "xCoord": "2",
         "yCoord": "1",
         "zCoord": "0",
+        "rotationMultiplier": "0.75",
         "media": [
             "./images/projects/sparks-gio/androiddemob.jpg",
             "./images/projects/sparks-gio/androidscreenseat.jpg",
@@ -121,6 +124,7 @@
         "xCoord": "2",
         "yCoord": "1",
         "zCoord": "-2.5",
+        "rotationMultiplier": "1.15",
         "media": [
             "./images/projects/tna-pacman/pizzahutbox-qr.jpg",
             "./images/projects/tna-pacman/armazestart.jpg",
@@ -143,6 +147,7 @@
         "xCoord": "2",
         "yCoord": "1",
         "zCoord": "-5",
+        "rotationMultiplier": "0.75",
         "media": [
             "./images/projects/mkg-chase/chaseux.mp4",
             "./images/projects/mkg-chase/helios-chase.mp4",

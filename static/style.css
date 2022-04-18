@@ -43,12 +43,12 @@ a {
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-300px, -150px);
+    transform: translate(-225px, -150px);
     display: grid;
     grid-template-rows: 1fr 1fr 1fr 1fr;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
     gap: 0px;
-    width: 600px;
+    width: 450px;
     height: 300px;
     z-index: 100;
     opacity: 1;
@@ -135,6 +135,7 @@ a {
     -webkit-backdrop-filter: blur(10px);
     font-size: 84px;
     font-weight: 600;
+    letter-spacing: -4px;
     transition: width 0.25s, height 0.25s, font-size 0.25s, top 0.25s, left 0.25s;
     cursor: pointer;
 }
@@ -203,10 +204,18 @@ a {
     top: 10px;
     left: 10px;
     right: 10px;
+    transform: translateY(0);
     background: rgba(0, 0, 0, 0.25);
     opacity: 100%;
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
+    transition: opacity 0.5s, transform 0.5s;
+}
+
+.moreprojects.inactive {
+    opacity: 0%;
+    transform: translateY(100%);
+    transition: opacity 0.5s, transform 0.5s;
 }
 
 .moreprojects .headline {
@@ -215,6 +224,7 @@ a {
     left: 50px;
     font-size: 84px;
     font-weight: 600;
+    letter-spacing: -4px;
 }
 
 .moreprojects .sidebar {
@@ -236,6 +246,39 @@ a {
 
 .moreprojects .sidebar .description {
     margin-top: 18px;
+}
+
+.moreprojects .sidebar .awards {
+    font-weight: 600;
+    font-size: 18px;
+    margin-top: 25px;
+}
+
+.moreprojects .sidebar .awards ul {
+    margin-bottom: 25px;
+}
+
+.moreprojects .sidebar .awards li {
+    font-weight: 400;
+    font-size: 12px;
+    line-height: normal;
+    letter-spacing: normal;
+    list-style: none;
+}
+
+.moreprojects .sidebar .awards li.title {
+    font-size: 16px;
+    font-weight: 600;
+    margin: auto;
+}
+
+.moreprojects .sidebar .awards li.category {
+    font-style: italic;
+}
+
+.moreprojects .sidebar .awards li.credit {
+    font-size: 10px;
+    font-weight: 200;
 }
 
 .moreprojects .media {
@@ -268,6 +311,21 @@ a {
     cursor: pointer;
 }
 
+.moreprojects .prevnext span.arrow {
+    width: 20px;
+    height: 20px;
+    line-height: 20px;
+    border-radius: 10px;
+}
+
+.moreprojects .prevnext .previousbutton {
+    margin-right: 10px;
+}
+
+.moreprojects .prevnext .nextbutton {
+    margin-left: 10px;
+}
+
 .backbutton {
     z-index: 25;
     position: absolute;
@@ -276,4 +334,136 @@ a {
     cursor: pointer;
     font-weight: 600;
     font-size: 24px;
+    line-height: 34px;
+}
+
+.projectinfo {
+    z-index: 50;
+    position: absolute;
+    width: calc(50% - 10px);
+    height: calc(100% - 20px);
+    top: 10px;
+    left: 10px;
+    right: 10px;
+    transform: translateX(0);
+    background: rgba(0, 0, 0, 0.25);
+    opacity: 100%;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    transition: opacity 0.5s, transform 0.5s;
+    overflow: none;
+}
+
+.projectinfo.inactive {
+    opacity: 0%;
+    transform: translateX(-100%);
+    transition: opacity 0.5s, transform 0.5s;
+}
+
+.projectinfo .innercontainer {
+    position: absolute;
+    top: 50px;
+    left: 50px;
+    width: calc(100% - 75px);
+    height: calc(100% - 50px);
+    overflow-x: none;
+    overflow-y: scroll;
+}
+
+.projectinfo .innercontainer .title {
+    font-size: 36px;
+    font-weight: 600;
+    letter-spacing: -3px;
+    line-height: 36px;
+    margin-bottom: 15px;
+}
+
+.projectinfo .innercontainer .subtitle {
+    font-size: 18px;
+    font-weight: 200;
+    font-style: italic;
+}
+
+.projectinfo .innercontainer .category {
+    font-size: 12px;
+    font-weight: 200;
+}
+
+.projectinfo .innercontainer .description {
+    margin-top: 25px;
+    margin-left: 25%;
+    margin-bottom: 25px;
+    padding-left: 25px;
+    padding-right: 25px;
+    border-left-style: solid;
+    border-left-color: #ffffff;
+    border-left-width: 4px;
+}
+
+.projectinfo .innercontainer .awards {
+    font-weight: 600;
+    font-size: 18px;
+    margin-top: 25px;
+}
+
+.projectinfo .innercontainer .awards ul {
+    margin-bottom: 25px;
+}
+
+.projectinfo .innercontainer .awards li {
+    font-weight: 400;
+    font-size: 12px;
+    line-height: normal;
+    letter-spacing: normal;
+}
+
+.projectinfo .innercontainer .awards li.title {
+    font-size: 16px;
+    font-weight: 600;
+    margin: auto;
+}
+
+.projectinfo .innercontainer .awards li.category {
+    font-style: italic;
+}
+
+.projectinfo .innercontainer .awards li.credit {
+    font-size: 10px;
+    font-weight: 200;
+}
+
+.projectinfo .media img {
+    max-width: calc(100% - 25px);
+}
+
+.projectnav {
+    z-index: 25;
+    position: absolute;
+    width: 50%;
+    bottom: 50px;
+    right: 0;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 24px;
+    text-align: center;
+    line-height: 34px;
+}
+
+span.arrow {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    border-radius: 15px;
+    color: #000000;
+    background: rgba(255, 255, 255, 0.5);
+    text-align: center;
+}
+
+.projectnav span {
+    margin-left: 25px;
+    margin-right: 25px;
+}
+
+.projectnav span.arrow {
+    margin: 0;
 }
