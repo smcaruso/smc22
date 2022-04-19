@@ -61,16 +61,16 @@ export default class Navigation {
                     this.createBackButton();
                     break;
 
-                case "#vr": // don't bother with the rest...
-                    this.app.camera.moveTo("Headset");
-                    labProjects.forEach( (project) => {
-                        if (project.model === "Headset") {
-                            this.createProjectWindow(project);
-                            this.labMenu.forEach( (navTag) => {navTag.classList.add("inactive"); } );
-                        }
-                    });
-                    this.projectMenu.forEach( (navTag) => {navTag.classList.add("inactive"); } );
-                    break;
+                // case "#vr": // don't bother with the rest...
+                //     this.app.camera.moveTo("Headset");
+                //     labProjects.forEach( (project) => {
+                //         if (project.model === "Headset") {
+                //             this.createProjectWindow(project);
+                //             this.labMenu.forEach( (navTag) => {navTag.classList.add("inactive"); } );
+                //         }
+                //     });
+                //     this.projectMenu.forEach( (navTag) => {navTag.classList.add("inactive"); } );
+                //     break;
 
             }
 
