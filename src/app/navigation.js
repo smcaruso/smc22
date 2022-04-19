@@ -21,6 +21,8 @@ export default class Navigation {
         this.mainMenu = {UpperGallery, LowerGallery, Deck};
         this.labMenu = this.createNavTags(labProjects);
         this.projectMenu = this.createNavTags(featuredProjects);
+        this.aboutInfo = document.querySelector(".info");
+        this.aboutStudio = document.querySelector(".studio");
 
         UpperGallery.addEventListener("pointermove", (event) => { event.stopPropagation(); })
         LowerGallery.addEventListener("pointermove", (event) => { event.stopPropagation(); })
@@ -137,7 +139,10 @@ export default class Navigation {
                 break;
                 
             case "#about":
-
+                    if (intersectedName === "Photo" || intersectedName === "Swatches" || intersectedName === "TextInfo" || intersectedName === "TextStudio") {
+                        this.app.canvas.style.cursor = "pointer";
+                        selection = true;
+                    }
                 break;
 
             case "#lab":
@@ -178,7 +183,8 @@ export default class Navigation {
     onPointerUp(upEvent) {
 
         let location = "main";
-        if (this.intersections.length > 0) { location = this.intersections[0].object.name; } else return;
+        if (this.intersections.length > 0) { location = this.intersections[0].object.name; }
+        else { this.app.camera.moveTo(location); return; }
 
         switch (window.location.hash) {
 
@@ -193,6 +199,7 @@ export default class Navigation {
                 break;
 
             case "#work":
+                if (location === "FloorPlane") { this.app.camera.moveTo("main"); return; }
                 if (this.intersections[0].object.name === "TextMoreProjects") {
                     this.createMoreProjects();
                     return;
@@ -206,6 +213,7 @@ export default class Navigation {
                 break;
 
             case "#lab":
+                if (location === "FloorPlane") { this.app.camera.moveTo("main"); return; }
                 labProjects.forEach( (project) => {
                     if (project.model === location) {
                         this.createProjectWindow(project);
@@ -215,6 +223,10 @@ export default class Navigation {
                 break;
 
             case "#about":
+                if (location === "FloorPlane") { this.app.camera.moveTo("main"); return; }
+                if (location === "Photo" || location === "Swatches" || location === "TextInfo" || location === "TextStudio") {
+                    this.openAboutWindow(location);
+                }
                 break;
 
         }
@@ -222,6 +234,28 @@ export default class Navigation {
         Object.keys(this.mainMenu).forEach(
             (key) => { this.mainMenu[key].classList.add("inactive"); }
         );
+
+    }
+
+    openAboutWindow(clicked) {
+
+        let panel, closeButton;
+        let canvas = this.app.canvas;
+
+        if (clicked === "Photo" || clicked === "TextInfo") { panel = this.aboutInfo; closeButton = document.getElementById("infoclose"); }
+        if (clicked === "Swatches" || clicked === "TextStudio") { panel = this.aboutStudio; closeButton = document.getElementById("studioclose");}
+
+        panel.classList.remove("inactive");
+        panel.addEventListener("pointerup", (event) => { event.stopPropagation(); })
+        closeButton.addEventListener("pointerup", closePanel);
+        canvas.addEventListener("pointerup", closePanel);
+
+        function closePanel(event) {
+            event.stopPropagation();
+            panel.classList.add("inactive");
+            closeButton.removeEventListener("pointerup", closePanel);
+            canvas.removeEventListener("pointerup", closePanel);
+        }
 
     }
 
@@ -274,6 +308,7 @@ export default class Navigation {
 
         let moreProjectsWindow = document.createElement("div");
         let moreProjectsHeadline = document.createElement("div");
+        let innerContainer = document.createElement("div");
         let projectInfoSidebar = document.createElement("div");
         let projectTitle = document.createElement("div");
         let projectSubtitle = document.createElement("div");
@@ -288,6 +323,7 @@ export default class Navigation {
         moreProjectsWindow.classList.add("moreprojects");
         moreProjectsWindow.classList.add("inactive");
         moreProjectsHeadline.classList.add("headline");
+        innerContainer.classList.add("innercontainer");
         projectInfoSidebar.classList.add("sidebar");
         projectTitle.classList.add("title");
         projectSubtitle.classList.add("sub");
@@ -307,10 +343,10 @@ export default class Navigation {
         
         prevNext.append(previousButton, nextButton);
         projectInfoSidebar.append(projectTitle, projectSubtitle, projectDescription);
+        innerContainer.append(projectInfoSidebar, projectMedia);
         moreProjectsWindow.append(
             moreProjectsHeadline,
-            projectInfoSidebar,
-            projectMedia,
+            innerContainer,
             closeButton,
             prevNext
         );
@@ -319,6 +355,7 @@ export default class Navigation {
         setTimeout(() => { moreProjectsWindow.classList.remove("inactive"); }, 1);
         
         moreProjectsWindow.addEventListener("pointermove", (event) => { event.stopPropagation(); })
+        moreProjectsWindow.addEventListener("pointerup", (event) => { event.stopPropagation(); })
 
         closeButton.addEventListener("pointerup", () => {
             moreProjectsWindow.classList.add("inactive");
@@ -413,6 +450,8 @@ export default class Navigation {
         projectDescription.classList.add("description");
         projectAwards.classList.add("awards");
         projectMedia.classList.add("media");
+        backButton.classList.add("transbutton");
+        nextButton.classList.add("button");
         projectNav.classList.add("projectnav");
 
         projectTitle.innerText = project.title;
@@ -453,9 +492,18 @@ export default class Navigation {
         }
 
         project.media.forEach( (mediaItem) => {
-            let image = new Image();
-            image.src = mediaItem;
-            projectMedia.append(image);
+
+            if (mediaItem.includes("mp4")) {
+                let video = document.createElement("video");
+                video.src = mediaItem;
+                video.controls = "true";
+                projectMedia.append(video);
+            } else {
+                let image = new Image();
+                image.src = mediaItem;
+                projectMedia.append(image);
+            }
+
         });
 
         projectInfoInnerContainer.append(projectMedia);
@@ -469,13 +517,47 @@ export default class Navigation {
             document.body.append(projectNav);
         }, 1000);
 
-        backButton.addEventListener("pointerup",
+        let canvas = this.app.canvas;
+
+        canvas.addEventListener("pointerup", exitProject);
+        // backButton.addEventListener("pointerup", exitProject);
+
+        nextButton.addEventListener("pointerup",
             (event) => {
-                gsap.to(modelRef.rotation, {y: Math.PI * 0.5, duration: 2.0, ease: "power2.inOut" });
-                history.back();
-                projectNav.remove();
+                this.clearWindows();
+                for (let lindex = 0; lindex < labProjects.length; lindex++) {
+                    if (labProjects[lindex].model === project.model) {
+                        if (lindex === labProjects.length -1) {
+                            this.app.camera.moveTo(labProjects[0].model);
+                            this.createProjectWindow(labProjects[0]);
+                        } else {
+                            this.app.camera.moveTo(labProjects[lindex + 1].model);
+                            this.createProjectWindow(labProjects[lindex + 1]);
+                        }
+                        return;
+                    }
+                }
+                for (let index = 0; index < featuredProjects.length; index++) {
+                    if (featuredProjects[index].model === project.model) {
+                        if (index === featuredProjects.length -1) {
+                            this.app.camera.moveTo(featuredProjects[0].model);
+                            this.createProjectWindow(featuredProjects[0]);
+                        } else {
+                            this.app.camera.moveTo(featuredProjects[index + 1].model);
+                            this.createProjectWindow(featuredProjects[index + 1]);
+                        }
+                        return;
+                    }
+                }
             }
-        )
+        );
+
+        function exitProject() {
+            gsap.to(modelRef.rotation, {y: Math.PI * 0.5, duration: 2.0, ease: "power2.inOut" });
+            history.back();
+            projectNav.remove();
+            canvas.removeEventListener("pointerup", exitProject);
+        }
         
     }
 

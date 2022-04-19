@@ -125,30 +125,34 @@ a {
 .mainmenu {
     z-index: 100;
     position: absolute;
-    width: 50%;
-    height: 50%;
-    top: 25%;
-    left: 25%;
-    background: rgba(0, 0, 0, 0.25);
+    width: calc(100% - 20px);
+    height: calc(100% - 20px);
+    top: 10px;
+    left: 10px;
+    /* background: rgba(0, 0, 0, 0.25); */
     opacity: 100%;
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-    font-size: 84px;
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    font-size: 96px;
     font-weight: 600;
     letter-spacing: -4px;
-    transition: width 0.25s, height 0.25s, font-size 0.25s, top 0.25s, left 0.25s;
+    transition: width 0.25s, height 0.25s, font-size 0.25s, top 0.5s, left 0.25s, backdrop-filter 0.5s;
     cursor: pointer;
+    pointer-events: none;
 }
 
 .mainmenu.inactive {
-    width: 10px;
+    /* width: 10px;
     height: 10px;
     top: 55%;
-    left: 50%;
-    transform: translate(-5px, -5px);
-    font-size: 0px;
+    left: 50%; */
+    top: 100%;
+    /* transform: translate(-5px, -5px); */
+    /* font-size: 0px; */
     opacity: 0%;
-    transition: width 0.25s, height 0.25s, font-size 0.25s, top 0.25s, left 0.25s, opacity 0.5s;
+    /* backdrop-filter: none; */
+    /* -webkit-backdrop-filter: none; */
+    transition: width 0.25s, height 0.25s, font-size 0.25s, top 0.5s, left 0.25s, opacity 0.5s, backdrop-filter 0.5s;
 }
 
 .mainmenu .label {
@@ -157,6 +161,18 @@ a {
     left: 50%;
     transform: translate(-50%, -50%);
     text-align: center;
+}
+
+#menulab {
+    background: rgba(108, 0, 99, 0.25);
+}
+
+#menuwork {
+    background: rgba(0, 108, 103, 0.25);
+}
+
+#menuabout {
+    background: rgba(0, 206, 255, 0.25);
 }
 
 .projectmenu {
@@ -228,10 +244,19 @@ a {
 }
 
 .moreprojects .sidebar {
-    position: fixed;
-    top: 175px;
+    position: absolute;
+    top: 0;
     right: 75px;
     width: 25%;
+}
+
+.moreprojects .innercontainer {
+    position: absolute;
+    top: 175px;
+    left: 50px;
+    overflow-y: scroll;
+    height: calc(100% - 225px);
+    width: calc(100% - 100px);
 }
 
 .moreprojects .sidebar .title {
@@ -283,12 +308,12 @@ a {
 
 .moreprojects .media {
     position: absolute;
-    top: 175px;
-    left: 50px;
-    width: calc(75% - 150px);
+    top: 0px;
+    left: 0px;
+    width: calc(75% - 100px);
     height: calc(100% - 175px);
-    overflow-x: none;
-    overflow-y: scroll;
+    overflow: none;
+    /* overflow-y: scroll; */
 }
 
 .moreprojects .media img {
@@ -305,8 +330,8 @@ a {
 
 .moreprojects .prevnext {
     position: absolute;
-    bottom: 50px;
-    right: 50px;
+    bottom: 25px;
+    right: 25px;
     font-weight: 600;
     cursor: pointer;
 }
@@ -390,9 +415,9 @@ a {
 }
 
 .projectinfo .innercontainer .description {
-    margin-top: 25px;
+    margin-top: 100px;
     margin-left: 25%;
-    margin-bottom: 25px;
+    margin-bottom: 100px;
     padding-left: 25px;
     padding-right: 25px;
     border-left-style: solid;
@@ -436,6 +461,10 @@ a {
     max-width: calc(100% - 25px);
 }
 
+.projectinfo .media video {
+    max-width: calc(100% - 25px);
+}
+
 .projectnav {
     z-index: 25;
     position: absolute;
@@ -447,6 +476,15 @@ a {
     font-size: 24px;
     text-align: center;
     line-height: 34px;
+    pointer-events: none;
+}
+
+.projectnav .button {
+    pointer-events: all;
+}
+
+.projectnav .transbutton {
+    pointer-events: none;
 }
 
 span.arrow {
@@ -466,4 +504,146 @@ span.arrow {
 
 .projectnav span.arrow {
     margin: 0;
+}
+
+.info {
+    z-index: 50;
+    position: absolute;
+    width: calc(50% - 10px);
+    height: calc(100% - 120px);
+    top: 10px;
+    left: 10px;
+    right: 10px;
+    padding: 50px;
+    transform: translateX(0);
+    background: rgba(0, 0, 0, 0.25);
+    opacity: 100%;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    transition: opacity 0.5s, transform 0.5s;
+    overflow: none;
+}
+
+.info.inactive {
+    opacity: 0%;
+    transform: translateX(-100%);
+    transition: opacity 0.5s, transform 0.5s;
+}
+
+.info .button {
+    position: absolute;
+    right: 100px;
+    bottom: 50px;
+    font-weight: 600;
+    font-size: 18px;
+    text-align: center;
+    line-height: 25px;
+    cursor: pointer;
+}
+
+.info .button .arrow {
+    display: inline-block;
+    width: 22px;
+    height: 22px;
+    border-radius: 11px;
+    color: #000000;
+    background: rgba(255, 255, 255, 0.5);
+    text-align: center;
+}
+
+.info h4 {
+    font-weight: 600;
+    font-size: 84px;
+    line-height: 80px;
+    letter-spacing: -4px;
+}
+
+.info .bodytext {
+    height: calc(100% - 70px);
+    padding-right: 25px;
+    overflow-x: none;
+    overflow-y: scroll;
+}
+
+.info p {
+    font-size: 18px;
+    margin-top: 25px;
+}
+
+.studio {
+    z-index: 50;
+    position: absolute;
+    width: calc(50% - 10px);
+    height: calc(100% - 120px);
+    top: 10px;
+    left: 10px;
+    right: 10px;
+    padding: 50px;
+    transform: translateX(0);
+    background: rgba(0, 0, 0, 0.25);
+    opacity: 100%;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    transition: opacity 0.5s, transform 0.5s;
+    overflow: none;
+}
+
+.studio.inactive {
+    opacity: 0%;
+    transform: translateX(-100%);
+    transition: opacity 0.5s, transform 0.5s;
+}
+
+.studio .button {
+    position: absolute;
+    right: 100px;
+    bottom: 50px;
+    font-weight: 600;
+    font-size: 18px;
+    text-align: center;
+    line-height: 25px;
+    cursor: pointer;
+}
+
+.studio .button .arrow {
+    display: inline-block;
+    width: 22px;
+    height: 22px;
+    border-radius: 11px;
+    color: #000000;
+    background: rgba(255, 255, 255, 0.5);
+    text-align: center;
+}
+
+.studio h4 {
+    font-weight: 600;
+    font-size: 84px;
+    line-height: 80px;
+    letter-spacing: -4px;
+}
+
+.studio h5 {
+    font-weight: 600;
+    font-size: 32px;
+    line-height: 36px;
+    letter-spacing: -2px;
+}
+
+.studio .bodytext {
+    height: calc(100% - 95px);
+    margin-top: 25px;
+    padding-right: 25px;
+    overflow-x: none;
+    overflow-y: scroll;
+}
+
+.studio p {
+    font-size: 18px;
+    margin-top: 25px;
+}
+
+.studio ul {
+    margin-bottom: 25px;
+    font-size: 18px;
+    font-weight: 200;
 }

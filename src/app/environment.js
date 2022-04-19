@@ -96,6 +96,7 @@ export default class Environment {
         let doubleDecker = new THREE.Object3D();
         let parameters;
         let shadow = true;
+        let trans = false;
 
         const whiteMaterial = new THREE.MeshBasicMaterial({color: 0xffffff});
 
@@ -205,26 +206,31 @@ export default class Environment {
                     case "TextFeatured":
                         parameters = {};
                         shadow = false;
+                        trans = false;
                         break;
 
                     case "TextMoreProjects":
                         parameters = {};
                         shadow = false;
+                        trans = true;
                         break;
                     
                     case "TextLab":
                         parameters = {};
                         shadow = false;
+                        trans = false;
                         break;
                     
                     case "TextInfo":
                         parameters = {};
                         shadow = false;
+                        trans = false;
                         break;
                     
                     case "TextStudio":
                         parameters = {};
                         shadow = false;
+                        trans = false;
                         break;
                     
                     case "Photo":
@@ -263,7 +269,12 @@ export default class Environment {
                 importedMesh.receiveShadow = shadow;
 
                 if (!parameters.color && !parameters.map) {
-                    importedMesh.material = whiteMaterial;
+                    if (trans) {
+                        let transMaterial = new THREE.MeshBasicMaterial({color: 0xfffffff, transparent: true, opacity: 0});
+                        importedMesh.material = transMaterial;
+                    } else {
+                        importedMesh.material = whiteMaterial;
+                    }
 
                 } else {
                     importedMesh.material = new THREE.MeshStandardMaterial(parameters);

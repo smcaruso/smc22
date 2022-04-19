@@ -1,8 +1,9 @@
 [
     {
         "title": "Virtual Reality",
-        "subtitle": "",
-        "description": "",
+        "subtitle": "Mobile / Standalone, PC-based, and AR",
+        "description": "VR has been a part of my design workflow for years. As a visualization tool, it's been valuable for seeing objects and environments at their real scale while still existing only in a digital form. While the technology is still in a formative state, the graphical fidelity and accessibility of available hardware has made enormous progress in just the past few years. Simpler devices like the Meta Quest 2 prove that wide adoption of XR will be dependent on a great end-to-end UX. In my opinion, designers and developers haven't yet been able to justify putting on the headset to most casual users, and I'm continually experimenting and prototyping to try and find a great use of the technology. WebXR, Meta's App Lab, and AR on iOS are my preferred tools.",
+        "category": "",
         "model": "Headset",
         "diffMap" : "HeadsetDiffuse",
         "roughMap": "HeadsetRough",
@@ -12,13 +13,15 @@
         "zCoord": "13",
         "rotationMultiplier": "1.15",
         "media": [
-            ""
+            "./images/projects/vr/vrdemo.mp4",
+            "./images/projects/vr/vrsitetest.mp4"
         ]
     },
     {
         "title": "Interactive 3D",
-        "subtitle": "",
-        "description": "",
+        "subtitle": "WebGL, RealityKit and Unreal Engine",
+        "category": "",
+        "description": "As seen here on this site, interactive 3D environments are a fun and immersive way to experience non-linear information, akin to a thoughtfully designed exhibit or showroom. In addition to some of the projects shown in the lower gallery, my experiments include complex realtime 3D applications streamed from remote rendering servers, mobile apps and games, and other immersive 3D websites.",
         "model": "Laptop",
         "diffMap" : "LaptopDiffuse",
         "roughMap": "LaptopRough",
@@ -27,13 +30,14 @@
         "zCoord": "10.5",
         "rotationMultiplier": "0.15",
         "media": [
-            ""
+            "./images/projects/interactive/portfolio.jpg"
         ]
     },
     {
         "title": "Visualization & Animation",
-        "subtitle": "",
-        "description": "",
+        "subtitle": "Hard surface modeling, game assets, and arch-viz",
+        "category": "",
+        "description": "I started out as an industrial designer, and representing ideas and forms accurately is an integral part of that work. I've been creating 3D models, rendered images, animations, game-ready assets and technical illustrations almost every day for the past decade.",
         "model": "Animation",
         "diffMap" : "AnimationDiffuse",
         "roughMap": "AnimationRough",
@@ -42,13 +46,15 @@
         "zCoord": "8",
         "rotationMultiplier": "0.35",
         "media": [
-            ""
+            "./images/projects/animation/circuits.mp4",
+            "./images/projects/animation/webux.mp4"
         ]
     },
     {
         "title": "Prototyping",
-        "subtitle": "",
-        "description": "",
+        "subtitle": "3D Printing and Microcontrollers",
+        "category": "",
+        "description": "One of my favorite things about living in the 21st century is the ability to manufacture functional objects from machines and tools right here in my studio. Combining 3D printed parts with Arduino or Raspberry Pi controllers and electronic bits from my local Micro Center is my favorite way to get something off the screen and into reality.",
         "model": "PCB",
         "diffMap" : "PCBDiffuse",
         "roughMap": "PCBRough",
@@ -58,13 +64,14 @@
         "zCoord": "5.5",
         "rotationMultiplier": "0.35",
         "media": [
-            ""
+            "./images/projects/proto/coaster.mp4"
         ]
     },
     {
-        "title": "Vintage Electronics",
+        "title": "Vintage & Restoration",
         "subtitle": "",
-        "description": "",
+        "category": "",
+        "description": "No, I don't know what I'm going to do with all these.",
         "model": "Mac",
         "diffMap" : "MacDiffuse",
         "roughMap": "MacRough",
@@ -74,7 +81,7 @@
         "zCoord": "3",
         "rotationMultiplier": "0.75",
         "media": [
-            ""
+            "./images/projects/mac/tower.jpg"
         ]
     }
 ]

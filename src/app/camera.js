@@ -253,7 +253,8 @@ export default class Camera {
             y: this.views[view].y,
             z: this.views[view].z,
             duration: this.views[view].duration,
-            ease: this.views[view].ease
+            ease: this.views[view].ease,
+            onComplete: toggleMoreOpacity.bind(this)
         });
 
         gsap.to(this.controls.target, {
@@ -263,6 +264,17 @@ export default class Camera {
             duration: this.views[view].duration,
             ease: this.views[view].ease
         });
+
+        function toggleMoreOpacity() {
+            let moreProjectsText = this.app.scene.getObjectByName("TextMoreProjects");
+            if (view === "LowerGallery") {
+                gsap.to(moreProjectsText.material, {opacity: 1, duration: 0.5});
+            } else if (moreProjectsText.material.opacity > 0) {
+                gsap.to(moreProjectsText.material, {opacity: 0, duration: 0.5});
+            }
+
+        }
+
 
     }
 

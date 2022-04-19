@@ -39,6 +39,8 @@ export default class App {
             () => {
                 this.environment = new Environment();
                 this.displayMeshes = new DisplayMeshes();
+                const aboutSection = document.querySelector(".aboutsection");
+                aboutSection.classList.remove("hidden");
             }
         )
 
