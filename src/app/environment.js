@@ -14,32 +14,39 @@ export default class Environment {
 
     addLights() {
 
-        const pointLightA = new THREE.PointLight(0xffffff, 500, 50, 2);
+        const pointLightA = new THREE.SpotLight(0xffffff, 10, 50, Math.PI);
+        // const pointLightB = new THREE.SpotLight(0xffffff, 2, 50, Math.PI);
+        // const pointLightC = new THREE.SpotLight(0xffffff, 2, 50, Math.PI);
+        const pointLightD = new THREE.SpotLight(0xffffff, 5, 10, Math.PI);
+        const pointLightE = new THREE.SpotLight(0xffffff, 10, 10, Math.PI);
+
+        // const pointLightA = new THREE.PointLight(0xffffff, 300, 50, 2);
         const pointLightB = new THREE.PointLight(0xffffff, 300, 50, 2);
         const pointLightC = new THREE.PointLight(0xffffff, 50, 15, 2);
-        const pointLightD = new THREE.PointLight(0xffffff, 50, 20, 2);
-        const pointLightE = new THREE.PointLight(0xffffff, 50, 15, 2);
+        // const pointLightD = new THREE.PointLight(0xffffff, 50, 20, 2);
+        // const pointLightE = new THREE.PointLight(0xffffff, 50, 15, 2);
 
-        pointLightA.castShadow = true;
+        // pointLightA.castShadow = true;
         pointLightB.castShadow = true;
         pointLightC.castShadow = true;
         pointLightD.castShadow = true;
-        pointLightE.castShadow = true;
+        // pointLightE.castShadow = true;
+
         pointLightA.shadow.mapSize.width = 512;
         pointLightA.shadow.mapSize.height = 512;
         pointLightB.shadow.mapSize.width = 512;
         pointLightB.shadow.mapSize.height = 512;
-        pointLightC.shadow.mapSize.width = 512;
-        pointLightC.shadow.mapSize.height = 512;
-        pointLightD.shadow.mapSize.width = 512;
-        pointLightD.shadow.mapSize.height = 512;
-        pointLightE.shadow.mapSize.width = 512;
-        pointLightE.shadow.mapSize.height = 512;
+        pointLightC.shadow.mapSize.width = 128;
+        pointLightC.shadow.mapSize.height = 128;
+        pointLightD.shadow.mapSize.width = 128;
+        pointLightD.shadow.mapSize.height = 128;
+        // pointLightE.shadow.mapSize.width = 512;
+        // pointLightE.shadow.mapSize.height = 512;
         pointLightA.shadow.radius = 5;
         pointLightB.shadow.radius = 5;
         pointLightC.shadow.radius = 5;
         pointLightD.shadow.radius = 5;
-        pointLightE.shadow.radius = 5;
+        // pointLightE.shadow.radius = 5;
 
         pointLightA.position.set(15, 30, -15);
         pointLightB.position.set(-18, 7, 18);
@@ -94,6 +101,8 @@ export default class Environment {
     processStructure() {
 
         let doubleDecker = new THREE.Object3D();
+        doubleDecker.matrixAutoUpdate = false;
+        
         let parameters;
         let shadow = true;
         let trans = false;
@@ -279,12 +288,12 @@ export default class Environment {
                 } else {
                     importedMesh.material = new THREE.MeshStandardMaterial(parameters);
                 }
-
                 doubleDecker.add(importedMesh.clone());
             }
-        );
-
+            );
+            
         this.app.scene.add(doubleDecker);
+        this.app.renderer.instance.compile(this.app.scene, this.app.camera.instance);
         this.app.camera.moveTo("initial");
 
     }

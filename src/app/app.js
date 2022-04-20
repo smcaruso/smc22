@@ -38,6 +38,9 @@ export default class App {
         this.loaders.on("ready",
             () => {
                 this.environment = new Environment();
+                // setTimeout(
+                //     () => { this.displayMeshes = new DisplayMeshes(); }, 2500
+                // );
                 this.displayMeshes = new DisplayMeshes();
                 const aboutSection = document.querySelector(".aboutsection");
                 aboutSection.classList.remove("hidden");

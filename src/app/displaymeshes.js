@@ -1,4 +1,5 @@
 import * as THREE from "three";
+import { gsap } from "gsap/all";
 import App from "./app.js";
 import featuredProjects from "../featured.json";
 import labProjects from "../lab.json";
@@ -9,6 +10,7 @@ export default class DisplayMeshes {
 
         this.featuredProjects = featuredProjects;
         this.labProjects = labProjects;
+        this.initial = false;
         
         this.app = new App();
         this.models = [];
@@ -16,10 +18,21 @@ export default class DisplayMeshes {
         this.createProjects(featuredProjects);
         this.createProjects(labProjects);
 
+    }
+
+    addModels() {
+
+        if (window.location.hash !== "#initial" && this.initial === true) return;
+
         this.models.forEach((each) => {
             this.app.scene.add(each);
+            gsap.to(each.material,
+                {opacity: 1, duration: 0.5, onComplete: () => { each.material.transparent = false; }
+                }
+            );
         });
 
+        this.initial = true;
     }
 
     createProjects(projectsList) {
@@ -37,6 +50,8 @@ export default class DisplayMeshes {
                     projectModel.material.envMapIntensity = 0.25;
                     projectModel.material.reflectivity = 0.15;
                     projectModel.material.side = THREE.DoubleSide;
+                    projectModel.material.transparent = true;
+                    projectModel.material.opacity = 0;
 
                     projectModel.castShadow = true;
                     // projectModel.receiveShadow = true;
@@ -61,9 +76,6 @@ export default class DisplayMeshes {
                 if (project.model === "PMIbeam") { 
                     projectModel.material.color = new THREE.Color(0x4F17A8);
                 }
-
-                // caps correction
-                if (projectModel.name === "headset") { projectModel.name = "Headset"; }
 
                 if (projectModel !== undefined) {
                     this.models.push(projectModel);

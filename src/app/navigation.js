@@ -450,7 +450,7 @@ export default class Navigation {
         projectDescription.classList.add("description");
         projectAwards.classList.add("awards");
         projectMedia.classList.add("media");
-        backButton.classList.add("transbutton");
+        backButton.classList.add("button");
         nextButton.classList.add("button");
         projectNav.classList.add("projectnav");
 
@@ -518,12 +518,14 @@ export default class Navigation {
         }, 1000);
 
         let canvas = this.app.canvas;
+        let camera = this.app.camera;
 
         canvas.addEventListener("pointerup", exitProject);
-        // backButton.addEventListener("pointerup", exitProject);
+        backButton.addEventListener("pointerup", exitProject);
 
         nextButton.addEventListener("pointerup",
             (event) => {
+                gsap.to(modelRef.rotation, {y: Math.PI * 0.5, duration: 2.0, ease: "power2.inOut" });
                 this.clearWindows();
                 for (let lindex = 0; lindex < labProjects.length; lindex++) {
                     if (labProjects[lindex].model === project.model) {
@@ -552,11 +554,19 @@ export default class Navigation {
             }
         );
 
-        function exitProject() {
+        function exitProject(event) {
+
+            event.stopPropagation();
+
+            let moveToLocation = "main";
+            if (project.category.length > 0) { moveToLocation = "LowerGallery"; }
+            else { moveToLocation = "UpperGallery"; }
+
             gsap.to(modelRef.rotation, {y: Math.PI * 0.5, duration: 2.0, ease: "power2.inOut" });
-            history.back();
+            camera.moveTo(moveToLocation);
             projectNav.remove();
             canvas.removeEventListener("pointerup", exitProject);
+            
         }
         
     }

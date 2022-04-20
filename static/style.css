@@ -483,9 +483,9 @@ a {
     pointer-events: all;
 }
 
-.projectnav .transbutton {
+/* .projectnav .transbutton {
     pointer-events: none;
-}
+} */
 
 span.arrow {
     display: inline-block;

@@ -8,6 +8,7 @@ export default class Camera {
     constructor() {
 
         this.app = new App();
+        this.initialized = false;
 
         this.setInstance();
         this.setOrbitControls();
@@ -203,8 +204,8 @@ export default class Camera {
         this.instance = new THREE.PerspectiveCamera(
             15,
             this.app.sizes.width / this.app.sizes.height,
-            0.1,
-            500
+            3,
+            120
         );
         
         this.instance.position.set(65, 20, 40);
@@ -262,7 +263,8 @@ export default class Camera {
             y: this.views[view].tY,
             z: this.views[view].tZ,
             duration: this.views[view].duration,
-            ease: this.views[view].ease
+            ease: this.views[view].ease,
+            onComplete: () => { this.app.displayMeshes.addModels(); }
         });
 
         function toggleMoreOpacity() {
@@ -274,7 +276,6 @@ export default class Camera {
             }
 
         }
-
 
     }
 
