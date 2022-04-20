@@ -2,4 +2,5 @@
     New for 2022:
     3D environment
     2D text presentation
-    Object-oriented project storage
+    Modular code structure
+    Featured projects and experimental media
