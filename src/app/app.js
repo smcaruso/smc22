@@ -30,20 +30,21 @@ export default class App {
         this.loaders = new Loaders(sources);
         this.camera = new Camera();
         this.renderer = new Renderer();
-        this.nav = new Navigation();
-
+        
         // Custom event listeners
         this.sizes.on("resize", () => { this.resize(); });
         this.time.on("tick", () => { this.update(); });
         this.loaders.on("ready",
-            () => {
-                this.environment = new Environment();
-                // setTimeout(
-                //     () => { this.displayMeshes = new DisplayMeshes(); }, 2500
-                // );
-                this.displayMeshes = new DisplayMeshes();
-                const aboutSection = document.querySelector(".aboutsection");
-                aboutSection.classList.remove("hidden");
+        () => {
+            if (window.innerWidth >= 430) {
+                    this.nav = new Navigation();
+                    this.environment = new Environment();
+                    this.displayMeshes = new DisplayMeshes();
+                    const aboutSection = document.querySelector(".aboutsection");
+                    aboutSection.classList.remove("hidden");
+                } else {
+                    console.log(`Loading mobile env for screen width ${window.innerWidth}`)
+                }
             }
         )
 

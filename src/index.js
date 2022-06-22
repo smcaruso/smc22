@@ -13,7 +13,7 @@ moreProjects.forEach(function(each) { PopulateProjetText(each, moreProjectsSecti
 // Instantiate 3D application
 
 const webGLcanvas = document.getElementById("webglcanvas");
-const app = new App(webGLcanvas);
+// const app = new App(webGLcanvas);
 
 function PopulateProjetText(project, section) {
 

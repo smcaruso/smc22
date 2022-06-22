@@ -201,9 +201,11 @@ export default class Camera {
 
     setInstance() {
 
+        let ratio = this.app.sizes.width / this.app.sizes.height
+
         this.instance = new THREE.PerspectiveCamera(
-            15,
-            this.app.sizes.width / this.app.sizes.height,
+            35 - (ratio * 10), // targets 15deg for 16:9 screen and 35deg for 9:16
+            ratio,
             3,
             120
         );
@@ -231,7 +233,9 @@ export default class Camera {
 
     resize() {
 
-        this.instance.aspect = this.app.sizes.width / this.app.sizes.height;
+        let ratio = this.app.sizes.width / this.app.sizes.height
+        this.instance.aspect = ratio;
+        this.instance.fov = 35 - (ratio * 10)
         this.instance.updateProjectionMatrix();
 
     }

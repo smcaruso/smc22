@@ -647,3 +647,41 @@ span.arrow {
     font-size: 18px;
     font-weight: 200;
 }
+
+@media screen and (max-width: 430px) {
+
+    .splash {
+        display: flex;
+        transform: none;
+        flex-direction: column;
+        justify-content: space-between;
+        position: absolute;
+        margin: 0;
+        width: 60vw;
+        height: 50vh;
+        top: 15vh;
+        left: 20vw;
+    }
+
+    .splash h1 {
+        font-size: 8vh;
+        line-height: 7vh;
+    }
+
+    .splash h2 {
+        font-size: 2vh;
+    }
+
+    .splash .logo {
+        display: none;
+    }
+
+    .splash .progress {
+        display: none;
+    }
+
+    .splash .helptext {
+        display: none;
+    }
+    
+}
