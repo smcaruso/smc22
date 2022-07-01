@@ -13,7 +13,14 @@ moreProjects.forEach(function(each) { PopulateProjetText(each, moreProjectsSecti
 // Instantiate 3D application
 
 const webGLcanvas = document.getElementById("webglcanvas");
-// const app = new App(webGLcanvas);
+const app = new App(webGLcanvas); // TURN OFF FOR TESTING MOBILE LOADING/SPLASH
+
+// disables mobile overscroll
+
+document.body.addEventListener("touchmove",
+    (e) => { e.preventDefault(); },
+    { passive: false, useCapture: false }
+);
 
 function PopulateProjetText(project, section) {
 

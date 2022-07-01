@@ -8,6 +8,7 @@ import Loaders from "./utils/loaders.js";
 import DisplayMeshes from "./displaymeshes.js";
 import Environment from "./environment.js";
 import Navigation from "./navigation.js";
+import MobileNav from "./mobile/mobilenav.js";
 
 let instance = null;
 
@@ -36,14 +37,16 @@ export default class App {
         this.time.on("tick", () => { this.update(); });
         this.loaders.on("ready",
         () => {
+            // choose navigation to load based on screen size
             if (window.innerWidth >= 430) {
                     this.nav = new Navigation();
-                    this.environment = new Environment();
+                    this.environment = new Environment(); // standard exhibit model
                     this.displayMeshes = new DisplayMeshes();
                     const aboutSection = document.querySelector(".aboutsection");
                     aboutSection.classList.remove("hidden");
                 } else {
-                    console.log(`Loading mobile env for screen width ${window.innerWidth}`)
+                    console.log(`Loading mobile env for screen width ${window.innerWidth}`);
+                    this.mobileNav = new MobileNav();
                 }
             }
         )

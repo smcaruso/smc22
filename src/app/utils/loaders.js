@@ -81,13 +81,20 @@ export default class Loaders extends EventEmitter {
 
     sourceLoaded(source, file) {
 
+        let barWidth = 300;
+        if (window.innerWidth <= 430) { barWidth = 100; }
+
+        // setting width of progress bar per device size. mobile gets a smaller bar.
+
         this.items[source.name] = file;
         this.loaded++;
 
-        this.fill = (this.loaded / this.toLoad) * 300;
-        this.border = 302 - this.fill;
+        this.fill = (this.loaded / this.toLoad) * barWidth;
+        this.border = barWidth + 2 - this.fill;
         this.progressbar.style.borderRightWidth = `${this.border}px`;
         this.progressbar.style.width = `${this.fill}px`;
+
+        // right border is loaded progress
 
         if (this.loaded === this.toLoad) {
             setTimeout(
@@ -96,7 +103,6 @@ export default class Loaders extends EventEmitter {
                     this.splashscreen.classList.add("ready");
                     this.trigger("ready");
                     setTimeout(() => { this.splashscreen.style.display = "none"; }, 2000)
-                    
                 },
             500);
         }

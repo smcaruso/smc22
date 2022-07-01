@@ -34,6 +34,9 @@ a {
     position: fixed;
     top: 0;
     left: 0;
+    height: 100%;
+    margin: 0;
+    overflow: 0;
     outline: none;
     z-index: 1;
     
@@ -648,19 +651,35 @@ span.arrow {
     font-weight: 200;
 }
 
+.mobilenav {
+    display: none;
+}
+
+/*
+
+/////////////////// MOBILE SPECIFIC MEDIA SELECTORS /////////////////////
+
+*/
+
 @media screen and (max-width: 430px) {
+
+    html, body {
+        height: 100vh;
+    }
 
     .splash {
         display: flex;
         transform: none;
         flex-direction: column;
         justify-content: space-between;
+        align-content: flex-start;
         position: absolute;
         margin: 0;
         width: 60vw;
         height: 50vh;
         top: 15vh;
         left: 20vw;
+        overflow: hidden;
     }
 
     .splash h1 {
@@ -677,11 +696,88 @@ span.arrow {
     }
 
     .splash .progress {
-        display: none;
+        text-align: left;
+    }
+
+    .splash .progress .bar {
+        margin: 0 0 10px 0;
+        height: 2px;
+        border-right-width: 100px;
+        outline-style: none;
+        outline-width: 0;
+        border-color: #202020;
     }
 
     .splash .helptext {
         display: none;
     }
+
+    .mobilenav.main {
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        z-index: 100;
+        width: 100vw;
+        height: 80vh;
+        transform: skewy(-10deg) translateY(10vh);
+        transition: transform 1s;
+
+    }
+
+    .mobilenav.main.hidden .mainmenuitem {
+        transform: translateY(-1000px);
+    }
+    
+    .mobilenav.main .mainmenuitem {
+        display: flex;
+        flex-grow: 1;
+        font-size: 6vh;
+        font-weight: 800;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 0 1vh 5vh #000000; /* x y radius color */
+    }
+
+    .mobilenav.main .mainmenuitem#about {
+        background: rgba(0, 206, 255, 0.5);
+        z-index: 103;
+        transition: transform 0.5s ease-out, flex-grow 0.5s;
+    }
+
+    .mobilenav.main .mainmenuitem#work {
+        background: rgba(0, 108, 103, 0.5);
+        z-index: 102;
+        transition: transform 0.75s ease-out, flex-grow 0.5s;
+    }
+
+    .mobilenav.main .mainmenuitem#lab {
+        background: rgba(108, 0, 99, 0.5);
+        z-index: 101;
+        transition: transform 1s ease-out, flex-grow 0.5s;
+    }
+
+    .mobilenav.main .mainmenuitem span.label {
+        opacity: 1;
+        line-height: 0px;
+        transition: opacity 0.25s;
+    }
+
+    .mobilenav.main .mainmenuitem.unselected span.label {
+        opacity: 0;
+    }
+
+    .mobilenav.main .mainmenuitem.unselected {
+        flex-grow: 0;
+    }
+
+    .mobilenav.main .mainmenuitem.selected {
+        flex-grow: 3;
+    }
+
+    .mobilenav.main.unselected{
+        transform: skewY(-10deg) translateY(-70vh);
+    }
+
     
 }

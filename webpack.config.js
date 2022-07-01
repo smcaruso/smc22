@@ -7,6 +7,7 @@ module.exports = {
     entry: "./src/index.js",
     devtool: "inline-source-map",
     devServer: {
+      hot: true,
       host: "local-ip",
         static: {
             directory: path.join(__dirname, 'dist'),
