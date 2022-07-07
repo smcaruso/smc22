@@ -10,44 +10,45 @@ export default class MobileNav {
     constructor() {
 
         this.app = new App();
-        this.mainNav = {
-            group: document.querySelector(".mobilenav.main"),
-            about: document.querySelector(".mainmenuitem#about"),
-            work: document.querySelector(".mainmenuitem#work"),
-            lab: document.querySelector(".mainmenuitem#lab")
-        };
 
-        this.mainNav.group.classList.remove("hidden");
+        this.navItems = new Map();
+        this.navItems.set("group", document.querySelector(".mobilenav.main"));
+        this.navItems.set("about", document.querySelector(".mainmenuitem#menufirst"));
+        this.navItems.set("work", document.querySelector(".mainmenuitem#menusecond"));
+        this.navItems.set("lab", document.querySelector(".mainmenuitem#menuthird"));
 
-        this.mainNav.about.addEventListener("pointerdown", this.selectNav.bind(this));
-        this.mainNav.work.addEventListener("pointerdown", this.selectNav.bind(this));
-        this.mainNav.lab.addEventListener("pointerdown", this.selectNav.bind(this));
+        this.navItems.forEach(
+          (element, item) => {
+            if (item !== "group") {
+                element.addEventListener("pointerdown", this.navSelect.bind(this));
+            } else {
+                setTimeout( () => {
+                    element.classList.remove("hidden");
+                    element.style["transition-duration"] = "0.5s";
+                }, 500);
+            }
+          }
+        );
 
     }
     
-    selectNav(pointerEvent) {
+    navSelect(pointerEvent) {
+      this.navItems.forEach(
+        (element, item) => {
+          if (element === pointerEvent.target) {
+            element.classList.toggle("selected");
+            element.classList.remove("unselected");
+            this.openPage(item);
+          } else {
+            element.classList.toggle("unselected");
+            element.classList.remove("selected");
+          }
+        }
+      );
+    }
 
-        const navElement = ((pointerEvent) => {
-            if (pointerEvent.target.nodeName === "SPAN") {
-                return pointerEvent.target.parentNode.id;
-            } else { return pointerEvent.target.id; }
-        })(pointerEvent);
-
-        Object.keys(this.mainNav).forEach(
-            (key) => {
-                if (key === navElement) {
-                    this.mainNav[key].classList.toggle("selected");
-                    this.mainNav[key].classList.remove("unselected");
-                } else {
-                    this.mainNav[key].classList.toggle("unselected");
-                    this.mainNav[key].classList.remove("selected");
-                }
-
-                // move group of nav to top
-                // stack inactive navs under active nav
-                // add listener to group to reset
-            }
-        );
+    openPage(section) {
+        console.log(section)
     }
 
 }

@@ -514,6 +514,7 @@ span.arrow {
     position: absolute;
     width: calc(50% - 10px);
     height: calc(100% - 120px);
+    min-width: 580px;
     top: 10px;
     left: 10px;
     right: 10px;
@@ -578,6 +579,7 @@ span.arrow {
     position: absolute;
     width: calc(50% - 10px);
     height: calc(100% - 120px);
+    min-width: 580px;
     top: 10px;
     left: 10px;
     right: 10px;
@@ -712,72 +714,95 @@ span.arrow {
         display: none;
     }
 
+    .mobilenav.main.hidden {
+        transform: skewY(-8deg) translateY(100vh);
+    }
+
     .mobilenav.main {
-        overflow: hidden;
-        display: flex;
-        flex-direction: column;
-        position: absolute;
         z-index: 100;
-        width: 100vw;
-        height: 80vh;
-        transform: skewy(-10deg) translateY(10vh);
-        transition: transform 1s;
-
-    }
-
-    .mobilenav.main.hidden .mainmenuitem {
-        transform: translateY(-1000px);
-    }
-    
-    .mobilenav.main .mainmenuitem {
         display: flex;
-        flex-grow: 1;
-        font-size: 6vh;
-        font-weight: 800;
-        align-items: center;
+        position: absolute;
+        flex-direction: column;
+        height: 50vh;
+        width: 100vw;
+        margin-top: 15vh;
+        transform: skewY(-8deg);
+        transition: transform 1.25s ease-out;
+        transition-delay: 0s;
+      }
+      
+      .mainmenuitem {
+        display: flex;
         justify-content: center;
-        box-shadow: 0 1vh 5vh #000000; /* x y radius color */
-    }
-
-    .mobilenav.main .mainmenuitem#about {
+        align-items: center;
+        flex-grow: 1;
+        font-weight: 800;
+        font-size: 5vh;
+        box-shadow: 0vh 1vh 1vh rgba(0, 0, 0, 0.5);
+        transition: flex-grow 0.25s ease-in-out, box-shadow 0.25s;
+        transition-delay: 0.5s;
+      }
+      
+      .mainmenuitem#menufirst {
         background: rgba(0, 206, 255, 0.5);
         z-index: 103;
-        transition: transform 0.5s ease-out, flex-grow 0.5s;
-    }
-
-    .mobilenav.main .mainmenuitem#work {
+      }
+      
+      .mainmenuitem#menusecond {
         background: rgba(0, 108, 103, 0.5);
         z-index: 102;
-        transition: transform 0.75s ease-out, flex-grow 0.5s;
-    }
-
-    .mobilenav.main .mainmenuitem#lab {
+      }
+      
+      .mainmenuitem#menuthird {
         background: rgba(108, 0, 99, 0.5);
         z-index: 101;
-        transition: transform 1s ease-out, flex-grow 0.5s;
-    }
-
-    .mobilenav.main .mainmenuitem span.label {
+      }
+      
+      .mobilenav.main.unselected {
+        transform: skewY(-8deg) translateY(-60vh);
+        transition-timing-function: ease-in;
+        transition-delay: 0.25s;
+      }
+      
+      .mobilenav.main .mainmenuitem.unselected {
+        box-shadow: 0vh 0vh 0vh rgba(0, 0, 0, 0);
+        flex-grow: 0;
+        transition-delay: 0s;
+      }
+      
+      .mobilenav.main .mainmenuitem.selected {
+        box-shadow: 0vh 1vh 2vh rgba(0, 0, 0, 0.5);
+        flex-grow: 3;
+        transition-delay: 0s;
+      }
+      
+      .mobilenav.main .mainmenuitem span.label {
+        pointer-events: none;
         opacity: 1;
         line-height: 0px;
         transition: opacity 0.25s;
-    }
-
-    .mobilenav.main .mainmenuitem.unselected span.label {
+        transition-delay: 0.5s;
+      }
+      
+      .mobilenav.main .mainmenuitem.unselected span.label {
         opacity: 0;
-    }
-
-    .mobilenav.main .mainmenuitem.unselected {
-        flex-grow: 0;
-    }
-
-    .mobilenav.main .mainmenuitem.selected {
-        flex-grow: 3;
-    }
-
-    .mobilenav.main.unselected{
-        transform: skewY(-10deg) translateY(-70vh);
-    }
+        transition-delay: 0s;
+      }
+      
+      .mobilenav.main .burger {
+        pointer-events: none;
+        position: absolute;
+        bottom: 2vh;
+        left: 4vw;
+        opacity: 0;
+        transition: opacity 0.25s ease-in;
+      }
+      
+      .mobilenav.main.unselected .burger {
+        opacity: 1;
+        z-index: 104;
+        transition: opacity 0.5s 0.5s ease-in-out;
+      }
 
     
 }
