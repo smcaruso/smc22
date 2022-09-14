@@ -34,6 +34,9 @@ a {
     position: fixed;
     top: 0;
     left: 0;
+    height: 100%;
+    margin: 0;
+    overflow: 0;
     outline: none;
     z-index: 1;
     
@@ -511,6 +514,7 @@ span.arrow {
     position: absolute;
     width: calc(50% - 10px);
     height: calc(100% - 120px);
+    min-width: 580px;
     top: 10px;
     left: 10px;
     right: 10px;
@@ -575,6 +579,7 @@ span.arrow {
     position: absolute;
     width: calc(50% - 10px);
     height: calc(100% - 120px);
+    min-width: 580px;
     top: 10px;
     left: 10px;
     right: 10px;
@@ -646,4 +651,158 @@ span.arrow {
     margin-bottom: 25px;
     font-size: 18px;
     font-weight: 200;
+}
+
+.mobilenav {
+    display: none;
+}
+
+/*
+
+/////////////////// MOBILE SPECIFIC MEDIA SELECTORS /////////////////////
+
+*/
+
+@media screen and (max-width: 430px) {
+
+    html, body {
+        height: 100vh;
+    }
+
+    .splash {
+        display: flex;
+        transform: none;
+        flex-direction: column;
+        justify-content: space-between;
+        align-content: flex-start;
+        position: absolute;
+        margin: 0;
+        width: 60vw;
+        height: 50vh;
+        top: 15vh;
+        left: 20vw;
+        overflow: hidden;
+    }
+
+    .splash h1 {
+        font-size: 8vh;
+        line-height: 7vh;
+    }
+
+    .splash h2 {
+        font-size: 2vh;
+    }
+
+    .splash .logo {
+        display: none;
+    }
+
+    .splash .progress {
+        text-align: left;
+    }
+
+    .splash .progress .bar {
+        margin: 0 0 10px 0;
+        height: 2px;
+        border-right-width: 100px;
+        outline-style: none;
+        outline-width: 0;
+        border-color: #202020;
+    }
+
+    .splash .helptext {
+        display: none;
+    }
+
+    .mobilenav.main.hidden {
+        transform: skewY(-8deg) translateY(100vh);
+    }
+
+    .mobilenav.main {
+        z-index: 100;
+        display: flex;
+        position: absolute;
+        flex-direction: column;
+        height: 50vh;
+        width: 100vw;
+        margin-top: 15vh;
+        transform: skewY(-8deg);
+        transition: transform 1.25s ease-out;
+        transition-delay: 0s;
+      }
+      
+      .mainmenuitem {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-grow: 1;
+        font-weight: 800;
+        font-size: 5vh;
+        box-shadow: 0vh 1vh 1vh rgba(0, 0, 0, 0.5);
+        transition: flex-grow 0.25s ease-in-out, box-shadow 0.25s;
+        transition-delay: 0.5s;
+      }
+      
+      .mainmenuitem#menufirst {
+        background: rgba(0, 206, 255, 0.5);
+        z-index: 103;
+      }
+      
+      .mainmenuitem#menusecond {
+        background: rgba(0, 108, 103, 0.5);
+        z-index: 102;
+      }
+      
+      .mainmenuitem#menuthird {
+        background: rgba(108, 0, 99, 0.5);
+        z-index: 101;
+      }
+      
+      .mobilenav.main.unselected {
+        transform: skewY(-8deg) translateY(-60vh);
+        transition-timing-function: ease-in;
+        transition-delay: 0.25s;
+      }
+      
+      .mobilenav.main .mainmenuitem.unselected {
+        box-shadow: 0vh 0vh 0vh rgba(0, 0, 0, 0);
+        flex-grow: 0;
+        transition-delay: 0s;
+      }
+      
+      .mobilenav.main .mainmenuitem.selected {
+        box-shadow: 0vh 1vh 2vh rgba(0, 0, 0, 0.5);
+        flex-grow: 3;
+        transition-delay: 0s;
+      }
+      
+      .mobilenav.main .mainmenuitem span.label {
+        pointer-events: none;
+        opacity: 1;
+        line-height: 0px;
+        transition: opacity 0.25s;
+        transition-delay: 0.5s;
+      }
+      
+      .mobilenav.main .mainmenuitem.unselected span.label {
+        opacity: 0;
+        transition-delay: 0s;
+      }
+      
+      .mobilenav.main .burger {
+        pointer-events: none;
+        position: absolute;
+        bottom: 2vh;
+        left: 4vw;
+        opacity: 0;
+        transition: opacity 0.25s ease-in;
+      }
+      
+      .mobilenav.main.unselected .burger {
+        opacity: 1;
+        z-index: 104;
+        transition: opacity 0.5s 0.5s ease-in-out;
+      }
+
+    
 }
